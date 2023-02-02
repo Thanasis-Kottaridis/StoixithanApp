@@ -12,10 +12,15 @@
 		AEB497D02985D1DB000FFD8A /* DataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB497CF2985D1DB000FFD8A /* DataTests.swift */; };
 		AEB497D12985D1DB000FFD8A /* Data.h in Headers */ = {isa = PBXBuildFile; fileRef = AEB497C32985D1DB000FFD8A /* Data.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AEB4980A2985D762000FFD8A /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEB498092985D762000FFD8A /* Domain.framework */; };
+		AECC8448298C695600F0FA93 /* DomainMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECC8447298C695600F0FA93 /* DomainMapper.swift */; };
+		AECC844B298C69B000F0FA93 /* SportDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECC844A298C69B000F0FA93 /* SportDto.swift */; };
+		AECC844E298C6A6800F0FA93 /* EventDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECC844D298C6A6800F0FA93 /* EventDto.swift */; };
+		AECC845F298C6C1A00F0FA93 /* SportMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECC845E298C6C1A00F0FA93 /* SportMapper.swift */; };
+		AECC8461298C6C3200F0FA93 /* EventMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECC8460298C6C3200F0FA93 /* EventMapper.swift */; };
 		AEF658F8298C42AA001B9EB1 /* DataAppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF658F7298C42AA001B9EB1 /* DataAppConfig.swift */; };
 		AEF65900298C5012001B9EB1 /* DataBoundry.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF658FF298C5012001B9EB1 /* DataBoundry.swift */; };
 		AEF65903298C506A001B9EB1 /* InjectBoundries.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF65902298C506A001B9EB1 /* InjectBoundries.swift */; };
-		AEF65906298C50D0001B9EB1 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF65905298C50D0001B9EB1 /* Api.swift */; };
+		AEF65906298C50D0001B9EB1 /* SportsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF65905298C50D0001B9EB1 /* SportsApi.swift */; };
 		E5196FE09343170558295F57 /* Pods_Data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AC74476E0B6870231223815 /* Pods_Data.framework */; };
 /* End PBXBuildFile section */
 
@@ -54,10 +59,15 @@
 		AEB497CF2985D1DB000FFD8A /* DataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTests.swift; sourceTree = "<group>"; };
 		AEB498002985D74E000FFD8A /* Presentation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Presentation.xcodeproj; path = ../Presentation/Presentation.xcodeproj; sourceTree = "<group>"; };
 		AEB498092985D762000FFD8A /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AECC8447298C695600F0FA93 /* DomainMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainMapper.swift; sourceTree = "<group>"; };
+		AECC844A298C69B000F0FA93 /* SportDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportDto.swift; sourceTree = "<group>"; };
+		AECC844D298C6A6800F0FA93 /* EventDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDto.swift; sourceTree = "<group>"; };
+		AECC845E298C6C1A00F0FA93 /* SportMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportMapper.swift; sourceTree = "<group>"; };
+		AECC8460298C6C3200F0FA93 /* EventMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventMapper.swift; sourceTree = "<group>"; };
 		AEF658F7298C42AA001B9EB1 /* DataAppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataAppConfig.swift; sourceTree = "<group>"; };
 		AEF658FF298C5012001B9EB1 /* DataBoundry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBoundry.swift; sourceTree = "<group>"; };
 		AEF65902298C506A001B9EB1 /* InjectBoundries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InjectBoundries.swift; sourceTree = "<group>"; };
-		AEF65905298C50D0001B9EB1 /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
+		AEF65905298C50D0001B9EB1 /* SportsApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsApi.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +137,7 @@
 				AEF65901298C5040001B9EB1 /* Di */,
 				AEF658F4298C425E001B9EB1 /* Boundaries */,
 				AEF65904298C5099001B9EB1 /* Network */,
+				AECC8449298C696F00F0FA93 /* Utils */,
 				AEB497C32985D1DB000FFD8A /* Data.h */,
 				AEB497C42985D1DB000FFD8A /* Data.docc */,
 			);
@@ -158,6 +169,56 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		AECC8442298C678E00F0FA93 /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				AEF65905298C50D0001B9EB1 /* SportsApi.swift */,
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
+		AECC8445298C691900F0FA93 /* Dto */ = {
+			isa = PBXGroup;
+			children = (
+				AECC844C298C6A4B00F0FA93 /* Sports */,
+			);
+			path = Dto;
+			sourceTree = "<group>";
+		};
+		AECC8446298C692300F0FA93 /* Mappers */ = {
+			isa = PBXGroup;
+			children = (
+				AECC845D298C6BD600F0FA93 /* Sports */,
+			);
+			path = Mappers;
+			sourceTree = "<group>";
+		};
+		AECC8449298C696F00F0FA93 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				AECC8447298C695600F0FA93 /* DomainMapper.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		AECC844C298C6A4B00F0FA93 /* Sports */ = {
+			isa = PBXGroup;
+			children = (
+				AECC844A298C69B000F0FA93 /* SportDto.swift */,
+				AECC844D298C6A6800F0FA93 /* EventDto.swift */,
+			);
+			path = Sports;
+			sourceTree = "<group>";
+		};
+		AECC845D298C6BD600F0FA93 /* Sports */ = {
+			isa = PBXGroup;
+			children = (
+				AECC845E298C6C1A00F0FA93 /* SportMapper.swift */,
+				AECC8460298C6C3200F0FA93 /* EventMapper.swift */,
+			);
+			path = Sports;
+			sourceTree = "<group>";
+		};
 		AEF658F4298C425E001B9EB1 /* Boundaries */ = {
 			isa = PBXGroup;
 			children = (
@@ -178,7 +239,9 @@
 		AEF65904298C5099001B9EB1 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				AEF65905298C50D0001B9EB1 /* Api.swift */,
+				AECC8442298C678E00F0FA93 /* Api */,
+				AECC8445298C691900F0FA93 /* Dto */,
+				AECC8446298C692300F0FA93 /* Mappers */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -341,11 +404,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AECC8448298C695600F0FA93 /* DomainMapper.swift in Sources */,
 				AEF65903298C506A001B9EB1 /* InjectBoundries.swift in Sources */,
+				AECC844E298C6A6800F0FA93 /* EventDto.swift in Sources */,
 				AEB497C52985D1DB000FFD8A /* Data.docc in Sources */,
+				AECC845F298C6C1A00F0FA93 /* SportMapper.swift in Sources */,
+				AECC844B298C69B000F0FA93 /* SportDto.swift in Sources */,
 				AEF658F8298C42AA001B9EB1 /* DataAppConfig.swift in Sources */,
-				AEF65906298C50D0001B9EB1 /* Api.swift in Sources */,
+				AEF65906298C50D0001B9EB1 /* SportsApi.swift in Sources */,
 				AEF65900298C5012001B9EB1 /* DataBoundry.swift in Sources */,
+				AECC8461298C6C3200F0FA93 /* EventMapper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

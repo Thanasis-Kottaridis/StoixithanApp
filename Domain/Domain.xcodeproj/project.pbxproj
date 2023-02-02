@@ -14,6 +14,8 @@
 		AEB4979B29857BF9000FFD8A /* Domain.h in Headers */ = {isa = PBXBuildFile; fileRef = AEB4978D29857BF9000FFD8A /* Domain.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AEB497B429857EB9000FFD8A /* CustomInject.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB497B329857EB9000FFD8A /* CustomInject.swift */; };
 		AEB4983C2985EAAF000FFD8A /* FeedbackMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB4983B2985EAAF000FFD8A /* FeedbackMessage.swift */; };
+		AECC8464298C6CA400F0FA93 /* Sport.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECC8463298C6CA400F0FA93 /* Sport.swift */; };
+		AECC8466298C6D4500F0FA93 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECC8465298C6D4500F0FA93 /* Event.swift */; };
 		AEF958AC298AEF7C007E565C /* BaseException.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF958AB298AEF7C007E565C /* BaseException.swift */; };
 		AEF958AE298AF0FC007E565C /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF958AD298AF0FC007E565C /* Result.swift */; };
 /* End PBXBuildFile section */
@@ -39,6 +41,8 @@
 		AEB4979929857BF9000FFD8A /* DomainTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainTests.swift; sourceTree = "<group>"; };
 		AEB497B329857EB9000FFD8A /* CustomInject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomInject.swift; sourceTree = "<group>"; };
 		AEB4983B2985EAAF000FFD8A /* FeedbackMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackMessage.swift; sourceTree = "<group>"; };
+		AECC8463298C6CA400F0FA93 /* Sport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sport.swift; sourceTree = "<group>"; };
+		AECC8465298C6D4500F0FA93 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		AEF958AB298AEF7C007E565C /* BaseException.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseException.swift; sourceTree = "<group>"; };
 		AEF958AD298AF0FC007E565C /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -121,6 +125,7 @@
 		AEB498392985EA95000FFD8A /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				AECC8462298C6C5300F0FA93 /* Sports */,
 				AEB4983A2985EA9F000FFD8A /* Base */,
 			);
 			path = Models;
@@ -134,6 +139,15 @@
 				AEF958AD298AF0FC007E565C /* Result.swift */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		AECC8462298C6C5300F0FA93 /* Sports */ = {
+			isa = PBXGroup;
+			children = (
+				AECC8463298C6CA400F0FA93 /* Sport.swift */,
+				AECC8465298C6D4500F0FA93 /* Event.swift */,
+			);
+			path = Sports;
 			sourceTree = "<group>";
 		};
 		F46D676A1C944EB061D5F2D7 /* Pods */ = {
@@ -285,6 +299,8 @@
 				AEF958AE298AF0FC007E565C /* Result.swift in Sources */,
 				AEB4978F29857BF9000FFD8A /* Domain.docc in Sources */,
 				AEB4983C2985EAAF000FFD8A /* FeedbackMessage.swift in Sources */,
+				AECC8464298C6CA400F0FA93 /* Sport.swift in Sources */,
+				AECC8466298C6D4500F0FA93 /* Event.swift in Sources */,
 				AEB497B429857EB9000FFD8A /* CustomInject.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

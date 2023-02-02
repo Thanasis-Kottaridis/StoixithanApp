@@ -1,5 +1,5 @@
 //
-//  Api.swift
+//  SportsApi.swift
 //  Data
 //
 //  Created by thanos kottaridis on 2/2/23.
@@ -9,7 +9,7 @@ import Foundation
 import Domain
 import Alamofire
 
-enum Api: URLRequestConvertible {
+enum SportsApi: URLRequestConvertible {
    
     private var appConfig: DataAppConfig {
         @Injected(\.dataAppConfig)
