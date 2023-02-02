@@ -1,0 +1,975 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		06A7C936DBBBD5E1126E40CC /* Pods_StoixithanApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B3A8F3DB73A4F1EDAA61769 /* Pods_StoixithanApp.framework */; };
+		0D3F4CD928DD143DB70DEA00 /* Pods_StoixithanApp_StoixithanAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A580A674C444020D77495999 /* Pods_StoixithanApp_StoixithanAppUITests.framework */; };
+		6F6DA8F590283311843C4896 /* Pods_StoixithanAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 002A9A4E11E1624048A757CE /* Pods_StoixithanAppTests.framework */; };
+		AE660560298AE2A4006AF6C3 /* TestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE66055E298AE2A4006AF6C3 /* TestVC.swift */; };
+		AE660561298AE2A4006AF6C3 /* TestVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE66055F298AE2A4006AF6C3 /* TestVC.xib */; };
+		AE7645562986AB810027148F /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7645552986AB810027148F /* AppConfig.swift */; };
+		AE76455A2986AC000027148F /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7645592986AC000027148F /* MainCoordinator.swift */; };
+		AEB497A629857D09000FFD8A /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEB497A529857D09000FFD8A /* Domain.framework */; };
+		AEB497A729857D09000FFD8A /* Domain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AEB497A529857D09000FFD8A /* Domain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		AEB498702985FFF0000FFD8A /* Data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEB498622985FFD2000FFD8A /* Data.framework */; };
+		AEB498712985FFF0000FFD8A /* Data.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AEB498622985FFD2000FFD8A /* Data.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		AEB498722985FFF9000FFD8A /* Presentation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEB4986D2985FFE1000FFD8A /* Presentation.framework */; };
+		AEB498732985FFF9000FFD8A /* Presentation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AEB4986D2985FFE1000FFD8A /* Presentation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		AEDBEAF529856CB4000448A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDBEAF429856CB4000448A9 /* AppDelegate.swift */; };
+		AEDBEAFE29856CB5000448A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AEDBEAFD29856CB5000448A9 /* Assets.xcassets */; };
+		AEDBEB0129856CB5000448A9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEDBEAFF29856CB5000448A9 /* LaunchScreen.storyboard */; };
+		AEDBEB0C29856CB5000448A9 /* StoixithanAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDBEB0B29856CB5000448A9 /* StoixithanAppTests.swift */; };
+		AEDBEB1629856CB5000448A9 /* StoixithanAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDBEB1529856CB5000448A9 /* StoixithanAppUITests.swift */; };
+		AEDBEB1829856CB5000448A9 /* StoixithanAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDBEB1729856CB5000448A9 /* StoixithanAppUITestsLaunchTests.swift */; };
+		AEF958C0298B2650007E565C /* TestEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF958BD298B2650007E565C /* TestEvents.swift */; };
+		AEF958C1298B2650007E565C /* TestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF958BE298B2650007E565C /* TestViewModel.swift */; };
+		AEF958C2298B2650007E565C /* TestState.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF958BF298B2650007E565C /* TestState.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AEB497AE29857E72000FFD8A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AEB497A929857E72000FFD8A /* Domain.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AEB4978A29857BF9000FFD8A;
+			remoteInfo = Domain;
+		};
+		AEB497B029857E72000FFD8A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AEB497A929857E72000FFD8A /* Domain.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AEB4979429857BF9000FFD8A;
+			remoteInfo = DomainTests;
+		};
+		AEB498612985FFD2000FFD8A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AEB4985C2985FFD2000FFD8A /* Data.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AEB497C02985D1DB000FFD8A;
+			remoteInfo = Data;
+		};
+		AEB498632985FFD2000FFD8A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AEB4985C2985FFD2000FFD8A /* Data.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AEB497CA2985D1DB000FFD8A;
+			remoteInfo = DataTests;
+		};
+		AEB4986C2985FFE1000FFD8A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AEB498672985FFE1000FFD8A /* Presentation.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AEB497E52985D53E000FFD8A;
+			remoteInfo = Presentation;
+		};
+		AEB4986E2985FFE1000FFD8A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AEB498672985FFE1000FFD8A /* Presentation.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AEB497EF2985D53E000FFD8A;
+			remoteInfo = PresentationTests;
+		};
+		AEDBEB0829856CB5000448A9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AEDBEAE929856CB4000448A9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AEDBEAF029856CB4000448A9;
+			remoteInfo = CleanArchitectureTemplate;
+		};
+		AEDBEB1229856CB5000448A9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AEDBEAE929856CB4000448A9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AEDBEAF029856CB4000448A9;
+			remoteInfo = CleanArchitectureTemplate;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		AEB497A829857D09000FFD8A /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				AEB498712985FFF0000FFD8A /* Data.framework in Embed Frameworks */,
+				AEB497A729857D09000FFD8A /* Domain.framework in Embed Frameworks */,
+				AEB498732985FFF9000FFD8A /* Presentation.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		002A9A4E11E1624048A757CE /* Pods_StoixithanAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StoixithanAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		110B3A53031917059DC6736D /* Pods-StoixithanApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StoixithanApp.release.xcconfig"; path = "Target Support Files/Pods-StoixithanApp/Pods-StoixithanApp.release.xcconfig"; sourceTree = "<group>"; };
+		4C5B0C56EA40CEAAAEEB3361 /* Pods-StoixithanAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StoixithanAppTests.release.xcconfig"; path = "Target Support Files/Pods-StoixithanAppTests/Pods-StoixithanAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		5B3A8F3DB73A4F1EDAA61769 /* Pods_StoixithanApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StoixithanApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6201C7A3B26616978D9409D1 /* Pods-StoixithanApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StoixithanApp.debug.xcconfig"; path = "Target Support Files/Pods-StoixithanApp/Pods-StoixithanApp.debug.xcconfig"; sourceTree = "<group>"; };
+		6EEFA72704AE0EC5BB03E71C /* Pods-StoixithanApp-StoixithanAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StoixithanApp-StoixithanAppUITests.release.xcconfig"; path = "Target Support Files/Pods-StoixithanApp-StoixithanAppUITests/Pods-StoixithanApp-StoixithanAppUITests.release.xcconfig"; sourceTree = "<group>"; };
+		A580A674C444020D77495999 /* Pods_StoixithanApp_StoixithanAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StoixithanApp_StoixithanAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE66055E298AE2A4006AF6C3 /* TestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestVC.swift; sourceTree = "<group>"; };
+		AE66055F298AE2A4006AF6C3 /* TestVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestVC.xib; sourceTree = "<group>"; };
+		AE7645552986AB810027148F /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
+		AE7645592986AC000027148F /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		AEB497A529857D09000FFD8A /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AEB497A929857E72000FFD8A /* Domain.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Domain.xcodeproj; path = Domain/Domain.xcodeproj; sourceTree = "<group>"; };
+		AEB4985C2985FFD2000FFD8A /* Data.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Data.xcodeproj; path = Data/Data.xcodeproj; sourceTree = "<group>"; };
+		AEB498672985FFE1000FFD8A /* Presentation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Presentation.xcodeproj; path = Presentation/Presentation.xcodeproj; sourceTree = "<group>"; };
+		AEDBEAF129856CB4000448A9 /* StoixithanApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StoixithanApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AEDBEAF429856CB4000448A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		AEDBEAFD29856CB5000448A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AEDBEB0029856CB5000448A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		AEDBEB0229856CB5000448A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AEDBEB0729856CB5000448A9 /* StoixithanAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StoixithanAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AEDBEB0B29856CB5000448A9 /* StoixithanAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoixithanAppTests.swift; sourceTree = "<group>"; };
+		AEDBEB1129856CB5000448A9 /* StoixithanAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StoixithanAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AEDBEB1529856CB5000448A9 /* StoixithanAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoixithanAppUITests.swift; sourceTree = "<group>"; };
+		AEDBEB1729856CB5000448A9 /* StoixithanAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoixithanAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		AEF958BD298B2650007E565C /* TestEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestEvents.swift; sourceTree = "<group>"; };
+		AEF958BE298B2650007E565C /* TestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewModel.swift; sourceTree = "<group>"; };
+		AEF958BF298B2650007E565C /* TestState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestState.swift; sourceTree = "<group>"; };
+		BB1DB2442D8D34485892FE82 /* Pods-StoixithanApp-StoixithanAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StoixithanApp-StoixithanAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-StoixithanApp-StoixithanAppUITests/Pods-StoixithanApp-StoixithanAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		BD3B0A4F1299A629576BD458 /* Pods-StoixithanAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StoixithanAppTests.debug.xcconfig"; path = "Target Support Files/Pods-StoixithanAppTests/Pods-StoixithanAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AEDBEAEE29856CB4000448A9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AEB498702985FFF0000FFD8A /* Data.framework in Frameworks */,
+				AEB497A629857D09000FFD8A /* Domain.framework in Frameworks */,
+				AEB498722985FFF9000FFD8A /* Presentation.framework in Frameworks */,
+				06A7C936DBBBD5E1126E40CC /* Pods_StoixithanApp.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AEDBEB0429856CB5000448A9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6F6DA8F590283311843C4896 /* Pods_StoixithanAppTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AEDBEB0E29856CB5000448A9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D3F4CD928DD143DB70DEA00 /* Pods_StoixithanApp_StoixithanAppUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AE7645542986AB590027148F /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				AEDBEAF429856CB4000448A9 /* AppDelegate.swift */,
+				AE7645552986AB810027148F /* AppConfig.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		AE7645572986ABA60027148F /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				AE7645592986AC000027148F /* MainCoordinator.swift */,
+				AE66055E298AE2A4006AF6C3 /* TestVC.swift */,
+				AE66055F298AE2A4006AF6C3 /* TestVC.xib */,
+				AEF958BD298B2650007E565C /* TestEvents.swift */,
+				AEF958BE298B2650007E565C /* TestViewModel.swift */,
+				AEF958BF298B2650007E565C /* TestState.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		AE7645582986ABB10027148F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				AEDBEAFD29856CB5000448A9 /* Assets.xcassets */,
+				AEDBEAFF29856CB5000448A9 /* LaunchScreen.storyboard */,
+				AEDBEB0229856CB5000448A9 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		AEB497A429857CAC000FFD8A /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				AEB4985C2985FFD2000FFD8A /* Data.xcodeproj */,
+				AEB497A929857E72000FFD8A /* Domain.xcodeproj */,
+				AEB498672985FFE1000FFD8A /* Presentation.xcodeproj */,
+			);
+			name = Dependencies;
+			sourceTree = "<group>";
+		};
+		AEB497AA29857E72000FFD8A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AEB497AF29857E72000FFD8A /* Domain.framework */,
+				AEB497B129857E72000FFD8A /* DomainTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AEB4985D2985FFD2000FFD8A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AEB498622985FFD2000FFD8A /* Data.framework */,
+				AEB498642985FFD2000FFD8A /* DataTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AEB498682985FFE1000FFD8A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AEB4986D2985FFE1000FFD8A /* Presentation.framework */,
+				AEB4986F2985FFE1000FFD8A /* PresentationTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AEDBEAE829856CB4000448A9 = {
+			isa = PBXGroup;
+			children = (
+				AEB497A429857CAC000FFD8A /* Dependencies */,
+				AEDBEAF329856CB4000448A9 /* StoixithanApp */,
+				AEDBEB0A29856CB5000448A9 /* StoixithanAppTests */,
+				AEDBEB1429856CB5000448A9 /* StoixithanAppUITests */,
+				AEDBEAF229856CB4000448A9 /* Products */,
+				C41F93E68C95C6AB33D77350 /* Pods */,
+				AFFEF68A8524EB3279AD6C66 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		AEDBEAF229856CB4000448A9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AEDBEAF129856CB4000448A9 /* StoixithanApp.app */,
+				AEDBEB0729856CB5000448A9 /* StoixithanAppTests.xctest */,
+				AEDBEB1129856CB5000448A9 /* StoixithanAppUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AEDBEAF329856CB4000448A9 /* StoixithanApp */ = {
+			isa = PBXGroup;
+			children = (
+				AE7645542986AB590027148F /* Application */,
+				AE7645572986ABA60027148F /* Main */,
+				AE7645582986ABB10027148F /* Resources */,
+			);
+			path = StoixithanApp;
+			sourceTree = "<group>";
+		};
+		AEDBEB0A29856CB5000448A9 /* StoixithanAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				AEDBEB0B29856CB5000448A9 /* StoixithanAppTests.swift */,
+			);
+			path = StoixithanAppTests;
+			sourceTree = "<group>";
+		};
+		AEDBEB1429856CB5000448A9 /* StoixithanAppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				AEDBEB1529856CB5000448A9 /* StoixithanAppUITests.swift */,
+				AEDBEB1729856CB5000448A9 /* StoixithanAppUITestsLaunchTests.swift */,
+			);
+			path = StoixithanAppUITests;
+			sourceTree = "<group>";
+		};
+		AFFEF68A8524EB3279AD6C66 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AEB497A529857D09000FFD8A /* Domain.framework */,
+				5B3A8F3DB73A4F1EDAA61769 /* Pods_StoixithanApp.framework */,
+				A580A674C444020D77495999 /* Pods_StoixithanApp_StoixithanAppUITests.framework */,
+				002A9A4E11E1624048A757CE /* Pods_StoixithanAppTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C41F93E68C95C6AB33D77350 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6201C7A3B26616978D9409D1 /* Pods-StoixithanApp.debug.xcconfig */,
+				110B3A53031917059DC6736D /* Pods-StoixithanApp.release.xcconfig */,
+				BB1DB2442D8D34485892FE82 /* Pods-StoixithanApp-StoixithanAppUITests.debug.xcconfig */,
+				6EEFA72704AE0EC5BB03E71C /* Pods-StoixithanApp-StoixithanAppUITests.release.xcconfig */,
+				BD3B0A4F1299A629576BD458 /* Pods-StoixithanAppTests.debug.xcconfig */,
+				4C5B0C56EA40CEAAAEEB3361 /* Pods-StoixithanAppTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AEDBEAF029856CB4000448A9 /* StoixithanApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AEDBEB1B29856CB5000448A9 /* Build configuration list for PBXNativeTarget "StoixithanApp" */;
+			buildPhases = (
+				1E266DF12B3AD8F584339902 /* [CP] Check Pods Manifest.lock */,
+				AEDBEAED29856CB4000448A9 /* Sources */,
+				AEDBEAEE29856CB4000448A9 /* Frameworks */,
+				AEDBEAEF29856CB4000448A9 /* Resources */,
+				AEB497A829857D09000FFD8A /* Embed Frameworks */,
+				6CD57BD03CC049E466FD615B /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = StoixithanApp;
+			productName = CleanArchitectureTemplate;
+			productReference = AEDBEAF129856CB4000448A9 /* StoixithanApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		AEDBEB0629856CB5000448A9 /* StoixithanAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AEDBEB1E29856CB5000448A9 /* Build configuration list for PBXNativeTarget "StoixithanAppTests" */;
+			buildPhases = (
+				E42486441AEB3458C5597A7C /* [CP] Check Pods Manifest.lock */,
+				AEDBEB0329856CB5000448A9 /* Sources */,
+				AEDBEB0429856CB5000448A9 /* Frameworks */,
+				AEDBEB0529856CB5000448A9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AEDBEB0929856CB5000448A9 /* PBXTargetDependency */,
+			);
+			name = StoixithanAppTests;
+			productName = CleanArchitectureTemplateTests;
+			productReference = AEDBEB0729856CB5000448A9 /* StoixithanAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		AEDBEB1029856CB5000448A9 /* StoixithanAppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AEDBEB2129856CB5000448A9 /* Build configuration list for PBXNativeTarget "StoixithanAppUITests" */;
+			buildPhases = (
+				E8097E862CA575928FE48434 /* [CP] Check Pods Manifest.lock */,
+				AEDBEB0D29856CB5000448A9 /* Sources */,
+				AEDBEB0E29856CB5000448A9 /* Frameworks */,
+				AEDBEB0F29856CB5000448A9 /* Resources */,
+				6D6582817EDBCBA034350973 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AEDBEB1329856CB5000448A9 /* PBXTargetDependency */,
+			);
+			name = StoixithanAppUITests;
+			productName = CleanArchitectureTemplateUITests;
+			productReference = AEDBEB1129856CB5000448A9 /* StoixithanAppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AEDBEAE929856CB4000448A9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					AEDBEAF029856CB4000448A9 = {
+						CreatedOnToolsVersion = 14.2;
+					};
+					AEDBEB0629856CB5000448A9 = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = AEDBEAF029856CB4000448A9;
+					};
+					AEDBEB1029856CB5000448A9 = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = AEDBEAF029856CB4000448A9;
+					};
+				};
+			};
+			buildConfigurationList = AEDBEAEC29856CB4000448A9 /* Build configuration list for PBXProject "StoixithanApp" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AEDBEAE829856CB4000448A9;
+			productRefGroup = AEDBEAF229856CB4000448A9 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = AEB4985D2985FFD2000FFD8A /* Products */;
+					ProjectRef = AEB4985C2985FFD2000FFD8A /* Data.xcodeproj */;
+				},
+				{
+					ProductGroup = AEB497AA29857E72000FFD8A /* Products */;
+					ProjectRef = AEB497A929857E72000FFD8A /* Domain.xcodeproj */;
+				},
+				{
+					ProductGroup = AEB498682985FFE1000FFD8A /* Products */;
+					ProjectRef = AEB498672985FFE1000FFD8A /* Presentation.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				AEDBEAF029856CB4000448A9 /* StoixithanApp */,
+				AEDBEB0629856CB5000448A9 /* StoixithanAppTests */,
+				AEDBEB1029856CB5000448A9 /* StoixithanAppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		AEB497AF29857E72000FFD8A /* Domain.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Domain.framework;
+			remoteRef = AEB497AE29857E72000FFD8A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AEB497B129857E72000FFD8A /* DomainTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = DomainTests.xctest;
+			remoteRef = AEB497B029857E72000FFD8A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AEB498622985FFD2000FFD8A /* Data.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Data.framework;
+			remoteRef = AEB498612985FFD2000FFD8A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AEB498642985FFD2000FFD8A /* DataTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = DataTests.xctest;
+			remoteRef = AEB498632985FFD2000FFD8A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AEB4986D2985FFE1000FFD8A /* Presentation.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Presentation.framework;
+			remoteRef = AEB4986C2985FFE1000FFD8A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AEB4986F2985FFE1000FFD8A /* PresentationTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = PresentationTests.xctest;
+			remoteRef = AEB4986E2985FFE1000FFD8A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AEDBEAEF29856CB4000448A9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AEDBEB0129856CB5000448A9 /* LaunchScreen.storyboard in Resources */,
+				AEDBEAFE29856CB5000448A9 /* Assets.xcassets in Resources */,
+				AE660561298AE2A4006AF6C3 /* TestVC.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AEDBEB0529856CB5000448A9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AEDBEB0F29856CB5000448A9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1E266DF12B3AD8F584339902 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-StoixithanApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6CD57BD03CC049E466FD615B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-StoixithanApp/Pods-StoixithanApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-StoixithanApp/Pods-StoixithanApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-StoixithanApp/Pods-StoixithanApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6D6582817EDBCBA034350973 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-StoixithanApp-StoixithanAppUITests/Pods-StoixithanApp-StoixithanAppUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-StoixithanApp-StoixithanAppUITests/Pods-StoixithanApp-StoixithanAppUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-StoixithanApp-StoixithanAppUITests/Pods-StoixithanApp-StoixithanAppUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E42486441AEB3458C5597A7C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-StoixithanAppTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E8097E862CA575928FE48434 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-StoixithanApp-StoixithanAppUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AEDBEAED29856CB4000448A9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AEF958C1298B2650007E565C /* TestViewModel.swift in Sources */,
+				AE660560298AE2A4006AF6C3 /* TestVC.swift in Sources */,
+				AEF958C0298B2650007E565C /* TestEvents.swift in Sources */,
+				AE7645562986AB810027148F /* AppConfig.swift in Sources */,
+				AE76455A2986AC000027148F /* MainCoordinator.swift in Sources */,
+				AEF958C2298B2650007E565C /* TestState.swift in Sources */,
+				AEDBEAF529856CB4000448A9 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AEDBEB0329856CB5000448A9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AEDBEB0C29856CB5000448A9 /* StoixithanAppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AEDBEB0D29856CB5000448A9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AEDBEB1629856CB5000448A9 /* StoixithanAppUITests.swift in Sources */,
+				AEDBEB1829856CB5000448A9 /* StoixithanAppUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AEDBEB0929856CB5000448A9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AEDBEAF029856CB4000448A9 /* StoixithanApp */;
+			targetProxy = AEDBEB0829856CB5000448A9 /* PBXContainerItemProxy */;
+		};
+		AEDBEB1329856CB5000448A9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AEDBEAF029856CB4000448A9 /* StoixithanApp */;
+			targetProxy = AEDBEB1229856CB5000448A9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		AEDBEAFF29856CB5000448A9 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AEDBEB0029856CB5000448A9 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AEDBEB1929856CB5000448A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		AEDBEB1A29856CB5000448A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AEDBEB1C29856CB5000448A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6201C7A3B26616978D9409D1 /* Pods-StoixithanApp.debug.xcconfig */;
+			buildSettings = {
+				APP_BASE_URL = "https://618d3aa7fe09aa001744060a.mockapi.io/";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = PQV5BN264J;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = StoixithanApp/resources/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Stoixithan;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = gr.tkottaridis.StoixithanApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		AEDBEB1D29856CB5000448A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 110B3A53031917059DC6736D /* Pods-StoixithanApp.release.xcconfig */;
+			buildSettings = {
+				APP_BASE_URL = "https://618d3aa7fe09aa001744060a.mockapi.io";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = PQV5BN264J;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = StoixithanApp/resources/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Stoixithan;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = gr.tkottaridis.StoixithanApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		AEDBEB1F29856CB5000448A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BD3B0A4F1299A629576BD458 /* Pods-StoixithanAppTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = PQV5BN264J;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = gr.tkottaridis.StoixithanAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StoixithanApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/StoixithanApp";
+			};
+			name = Debug;
+		};
+		AEDBEB2029856CB5000448A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4C5B0C56EA40CEAAAEEB3361 /* Pods-StoixithanAppTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = PQV5BN264J;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = gr.tkottaridis.StoixithanAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StoixithanApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/StoixithanApp";
+			};
+			name = Release;
+		};
+		AEDBEB2229856CB5000448A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BB1DB2442D8D34485892FE82 /* Pods-StoixithanApp-StoixithanAppUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = PQV5BN264J;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = gr.tkottaridis.StoixithanAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = StoixithanApp;
+			};
+			name = Debug;
+		};
+		AEDBEB2329856CB5000448A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6EEFA72704AE0EC5BB03E71C /* Pods-StoixithanApp-StoixithanAppUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = PQV5BN264J;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = gr.tkottaridis.StoixithanAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = StoixithanApp;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AEDBEAEC29856CB4000448A9 /* Build configuration list for PBXProject "StoixithanApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AEDBEB1929856CB5000448A9 /* Debug */,
+				AEDBEB1A29856CB5000448A9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AEDBEB1B29856CB5000448A9 /* Build configuration list for PBXNativeTarget "StoixithanApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AEDBEB1C29856CB5000448A9 /* Debug */,
+				AEDBEB1D29856CB5000448A9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AEDBEB1E29856CB5000448A9 /* Build configuration list for PBXNativeTarget "StoixithanAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AEDBEB1F29856CB5000448A9 /* Debug */,
+				AEDBEB2029856CB5000448A9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AEDBEB2129856CB5000448A9 /* Build configuration list for PBXNativeTarget "StoixithanAppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AEDBEB2229856CB5000448A9 /* Debug */,
+				AEDBEB2329856CB5000448A9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AEDBEAE929856CB4000448A9 /* Project object */;
+}
