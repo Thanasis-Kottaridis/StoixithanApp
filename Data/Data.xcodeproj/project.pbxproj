@@ -17,6 +17,8 @@
 		AECC844E298C6A6800F0FA93 /* EventDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECC844D298C6A6800F0FA93 /* EventDto.swift */; };
 		AECC845F298C6C1A00F0FA93 /* SportMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECC845E298C6C1A00F0FA93 /* SportMapper.swift */; };
 		AECC8461298C6C3200F0FA93 /* EventMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECC8460298C6C3200F0FA93 /* EventMapper.swift */; };
+		AECC8471298C7D9400F0FA93 /* SportsRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECC8470298C7D9400F0FA93 /* SportsRepositoryImpl.swift */; };
+		AECC8475298C88CA00F0FA93 /* DataRequest_Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECC8474298C88CA00F0FA93 /* DataRequest_Ext.swift */; };
 		AEF658F8298C42AA001B9EB1 /* DataAppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF658F7298C42AA001B9EB1 /* DataAppConfig.swift */; };
 		AEF65900298C5012001B9EB1 /* DataBoundry.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF658FF298C5012001B9EB1 /* DataBoundry.swift */; };
 		AEF65903298C506A001B9EB1 /* InjectBoundries.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF65902298C506A001B9EB1 /* InjectBoundries.swift */; };
@@ -64,6 +66,8 @@
 		AECC844D298C6A6800F0FA93 /* EventDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDto.swift; sourceTree = "<group>"; };
 		AECC845E298C6C1A00F0FA93 /* SportMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportMapper.swift; sourceTree = "<group>"; };
 		AECC8460298C6C3200F0FA93 /* EventMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventMapper.swift; sourceTree = "<group>"; };
+		AECC8470298C7D9400F0FA93 /* SportsRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsRepositoryImpl.swift; sourceTree = "<group>"; };
+		AECC8474298C88CA00F0FA93 /* DataRequest_Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataRequest_Ext.swift; sourceTree = "<group>"; };
 		AEF658F7298C42AA001B9EB1 /* DataAppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataAppConfig.swift; sourceTree = "<group>"; };
 		AEF658FF298C5012001B9EB1 /* DataBoundry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBoundry.swift; sourceTree = "<group>"; };
 		AEF65902298C506A001B9EB1 /* InjectBoundries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InjectBoundries.swift; sourceTree = "<group>"; };
@@ -137,6 +141,7 @@
 				AEF65901298C5040001B9EB1 /* Di */,
 				AEF658F4298C425E001B9EB1 /* Boundaries */,
 				AEF65904298C5099001B9EB1 /* Network */,
+				AECC846F298C7D5300F0FA93 /* Repository */,
 				AECC8449298C696F00F0FA93 /* Utils */,
 				AEB497C32985D1DB000FFD8A /* Data.h */,
 				AEB497C42985D1DB000FFD8A /* Data.docc */,
@@ -196,7 +201,8 @@
 		AECC8449298C696F00F0FA93 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				AECC8447298C695600F0FA93 /* DomainMapper.swift */,
+				AECC8472298C88A800F0FA93 /* Helpers */,
+				AECC8473298C88B600F0FA93 /* Extensions */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -217,6 +223,30 @@
 				AECC8460298C6C3200F0FA93 /* EventMapper.swift */,
 			);
 			path = Sports;
+			sourceTree = "<group>";
+		};
+		AECC846F298C7D5300F0FA93 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				AECC8470298C7D9400F0FA93 /* SportsRepositoryImpl.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		AECC8472298C88A800F0FA93 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				AECC8447298C695600F0FA93 /* DomainMapper.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		AECC8473298C88B600F0FA93 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				AECC8474298C88CA00F0FA93 /* DataRequest_Ext.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		AEF658F4298C425E001B9EB1 /* Boundaries */ = {
@@ -406,6 +436,8 @@
 			files = (
 				AECC8448298C695600F0FA93 /* DomainMapper.swift in Sources */,
 				AEF65903298C506A001B9EB1 /* InjectBoundries.swift in Sources */,
+				AECC8471298C7D9400F0FA93 /* SportsRepositoryImpl.swift in Sources */,
+				AECC8475298C88CA00F0FA93 /* DataRequest_Ext.swift in Sources */,
 				AECC844E298C6A6800F0FA93 /* EventDto.swift in Sources */,
 				AEB497C52985D1DB000FFD8A /* Data.docc in Sources */,
 				AECC845F298C6C1A00F0FA93 /* SportMapper.swift in Sources */,

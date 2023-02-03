@@ -17,11 +17,11 @@ enum SportsApi: URLRequestConvertible {
         return appConfig
     }
     
-    case mockApi
+    case sportsApi
     
     var path: String {
         switch self {
-        case .mockApi:
+        case .sportsApi:
             return "api/sports"
         }
         
@@ -29,14 +29,14 @@ enum SportsApi: URLRequestConvertible {
     
     var method: HTTPMethod {
         switch self {
-        case .mockApi:
+        case .sportsApi:
             return .get
         }
     }
     
     var encoding: ParameterEncoding {
         switch self {
-        case .mockApi:
+        case .sportsApi:
             return URLEncoding.default
         }
     }

@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Domain
+import Data
 import Presentation
 
 @main
@@ -41,6 +43,9 @@ class AppDelegate: UIResponder, BaseAppDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
+        // set up modules
+        initializeModules()
+        
         // create a base UIWindow and activate it
         window?.backgroundColor = .white
         window?.rootViewController = mainCoordinator.navigationController
@@ -49,6 +54,15 @@ class AppDelegate: UIResponder, BaseAppDelegate {
         // start main coordinator
         mainCoordinator.start()
         return true
+    }
+}
+
+// MARK: - Initialize Modules
+extension AppDelegate {
+    private func initializeModules() {
+        DataBoundry(
+            appConfig: DataAppConfigImpl()
+        ).initialize()
     }
 }
 

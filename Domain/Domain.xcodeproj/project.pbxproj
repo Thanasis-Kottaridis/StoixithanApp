@@ -16,6 +16,7 @@
 		AEB4983C2985EAAF000FFD8A /* FeedbackMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB4983B2985EAAF000FFD8A /* FeedbackMessage.swift */; };
 		AECC8464298C6CA400F0FA93 /* Sport.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECC8463298C6CA400F0FA93 /* Sport.swift */; };
 		AECC8466298C6D4500F0FA93 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECC8465298C6D4500F0FA93 /* Event.swift */; };
+		AECC846E298C7D0D00F0FA93 /* SportsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECC846D298C7D0D00F0FA93 /* SportsRepository.swift */; };
 		AEF958AC298AEF7C007E565C /* BaseException.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF958AB298AEF7C007E565C /* BaseException.swift */; };
 		AEF958AE298AF0FC007E565C /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF958AD298AF0FC007E565C /* Result.swift */; };
 /* End PBXBuildFile section */
@@ -43,6 +44,7 @@
 		AEB4983B2985EAAF000FFD8A /* FeedbackMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackMessage.swift; sourceTree = "<group>"; };
 		AECC8463298C6CA400F0FA93 /* Sport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sport.swift; sourceTree = "<group>"; };
 		AECC8465298C6D4500F0FA93 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		AECC846D298C7D0D00F0FA93 /* SportsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsRepository.swift; sourceTree = "<group>"; };
 		AEF958AB298AEF7C007E565C /* BaseException.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseException.swift; sourceTree = "<group>"; };
 		AEF958AD298AF0FC007E565C /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -100,6 +102,7 @@
 			children = (
 				AEB497B229857EA7000FFD8A /* Di */,
 				AEB498392985EA95000FFD8A /* Models */,
+				AECC846B298C7CE300F0FA93 /* Repository */,
 				AEB4978D29857BF9000FFD8A /* Domain.h */,
 				AEB4978E29857BF9000FFD8A /* Domain.docc */,
 			);
@@ -148,6 +151,14 @@
 				AECC8465298C6D4500F0FA93 /* Event.swift */,
 			);
 			path = Sports;
+			sourceTree = "<group>";
+		};
+		AECC846B298C7CE300F0FA93 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				AECC846D298C7D0D00F0FA93 /* SportsRepository.swift */,
+			);
+			path = Repository;
 			sourceTree = "<group>";
 		};
 		F46D676A1C944EB061D5F2D7 /* Pods */ = {
@@ -299,6 +310,7 @@
 				AEF958AE298AF0FC007E565C /* Result.swift in Sources */,
 				AEB4978F29857BF9000FFD8A /* Domain.docc in Sources */,
 				AEB4983C2985EAAF000FFD8A /* FeedbackMessage.swift in Sources */,
+				AECC846E298C7D0D00F0FA93 /* SportsRepository.swift in Sources */,
 				AECC8464298C6CA400F0FA93 /* Sport.swift in Sources */,
 				AECC8466298C6D4500F0FA93 /* Event.swift in Sources */,
 				AEB497B429857EB9000FFD8A /* CustomInject.swift in Sources */,

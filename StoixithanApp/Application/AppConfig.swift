@@ -6,30 +6,32 @@
 //
 
 import Foundation
+import Domain
+import Data
 
-final class AppConfig {
+final class AppConfig{
     
-    lazy var hasAlreadyRun: Bool = false
+    static var hasAlreadyRun: Bool = false
     
-    lazy var appBundleID: String = {
+    static var appBundleID: String = {
         return path("CFBundleIdentifier")
     }()
     
-    lazy var appVersion: String = {
+    static var appVersion: String = {
         let version = path("CFBundleShortVersionString")
         let buildNo = path("CFBundleVersion")
         return "\(version)(\(buildNo))"
     }()
     
-    lazy var appAbsoluteVersion: String = {
+    static var appAbsoluteVersion: String = {
         return path("CFBundleShortVersionString")
     }()
     
-    lazy var appApiBaseUrl: String = {
+    static var appApiBaseUrl: String = {
         return path("Environment", "App Api Base URL")
     }()
 
-    private func path(_ keys: String...) -> String {
+    private static func path(_ keys: String...) -> String {
         var current = Bundle.main.infoDictionary
         for (index, key) in keys.enumerated() {
             if index == keys.count - 1 {
@@ -47,4 +49,11 @@ final class AppConfig {
         return ""
     }
     
+}
+
+// MARK: - Default Data AppConfig
+class DataAppConfigImpl: DataAppConfig {
+    var appApiBaseUrl: String {
+        return AppConfig.appApiBaseUrl
+    }
 }

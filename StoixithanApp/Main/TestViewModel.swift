@@ -9,6 +9,7 @@
 
 import UIKit
 import Domain
+import Data
 import Presentation
 import RxSwift
 import RxCocoa
@@ -36,9 +37,26 @@ class TestViewModel: BaseViewModel {
         switch event {
             // Event case go here
         case .goToTest:
-            actionHandler?.handleAction(action: GoToTest())
+//            actionHandler?.handleAction(action: GoToTest())
+            testEndpoint()
         }
     }
     
     // PRIVATE METHOD IMPLEMENTATION
+    private func testEndpoint() {
+        state.accept(state.value.copy(isLoading: true))
+        SportsRepositoryImpl().getSpotsWithEvents { [weak self] result in
+            guard let self = self
+            else { return }
+            
+            self.state.accept(self.state.value.copy(isLoading: false))
+            
+            switch result {
+            case .Success(let response):
+                print("TestViewModel Debug..... response data \(response?.count)")
+            case .Failure(let error):
+                self.handleErrors(error: error)
+            }
+        }
+    }
 }
