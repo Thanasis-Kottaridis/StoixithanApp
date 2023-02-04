@@ -63,6 +63,10 @@ extension AppDelegate {
         DataBoundry(
             appConfig: DataAppConfigImpl()
         ).initialize()
+        
+        PresentationBoundary(
+            sportsRepository: SportsRepositoryImpl()
+        ).initialize()
     }
 }
 

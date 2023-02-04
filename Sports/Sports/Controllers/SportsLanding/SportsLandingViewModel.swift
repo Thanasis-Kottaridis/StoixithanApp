@@ -16,6 +16,11 @@ import RxDataSources
 
 class SportsLandingViewModel: BaseViewModel {
     
+    // MARK: - DI
+    @Injected(\.sportsRepository)
+    private var sportsRepository: SportsRepository
+    
+    // MARK: - BaseViewModel Set Up
     weak var actionHandler: BaseActionHandler?
     
     typealias State = SportsLandingState
@@ -36,8 +41,34 @@ class SportsLandingViewModel: BaseViewModel {
     func onTriggeredEvent(event: Event) {
         switch event {
             // Event case go here
+        case .fetchData:
+            getSportsWithEvents(forceUpdate: false)
+        case .refreshData:
+            getSportsWithEvents(forceUpdate: true)
+        case .selectFavoriteEvent(let eventId):
+            <#code#>
         }
     }
     
     // PRIVATE METHOD IMPLEMENTATION
+    private func getSportsWithEvents(forceUpdate: Bool) {
+        state.accept(state.value.copy(isLoading: true))
+        sportsRepository.getSpotsWithEvents(forceUpdate) { [weak self] result in
+            guard let self = self
+            else { return }
+            
+            self.state.accept(self.state.value.copy(isLoading: false))
+            
+            switch result {
+            case .Success(let response):
+                print("TestViewModel Debug..... response data \(response?.count)")
+            case .Failure(let error):
+                self.handleErrors(error: error)
+            }
+        }
+    }
+    
+    private func selectFavoriteEvent(eventId: String) {
+        
+    }
 }

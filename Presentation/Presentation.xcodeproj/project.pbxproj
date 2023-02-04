@@ -11,6 +11,8 @@
 		AE223F04298E63D5006DA84C /* Str.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE223F03298E63D5006DA84C /* Str.swift */; };
 		AE223F06298E644C006DA84C /* Languages.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE223F05298E644C006DA84C /* Languages.swift */; };
 		AE223F08298E6472006DA84C /* LanguageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE223F07298E6472006DA84C /* LanguageManager.swift */; };
+		AE224040298E8F4E006DA84C /* PresentationBoundary.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE22403F298E8F4E006DA84C /* PresentationBoundary.swift */; };
+		AE224042298E8FF0006DA84C /* InjectRepositories.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE224041298E8FF0006DA84C /* InjectRepositories.swift */; };
 		AE66053E298ADD7A006AF6C3 /* loading.json in Resources */ = {isa = PBXBuildFile; fileRef = AE66053D298ADD7A006AF6C3 /* loading.json */; };
 		AE660541298ADDBD006AF6C3 /* GenericLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE660540298ADDBD006AF6C3 /* GenericLoader.swift */; };
 		AE7645392986A3090027148F /* Mulish-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AE76452F29869C150027148F /* Mulish-Regular.ttf */; };
@@ -85,6 +87,8 @@
 		AE223F03298E63D5006DA84C /* Str.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Str.swift; sourceTree = "<group>"; };
 		AE223F05298E644C006DA84C /* Languages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Languages.swift; sourceTree = "<group>"; };
 		AE223F07298E6472006DA84C /* LanguageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageManager.swift; sourceTree = "<group>"; };
+		AE22403F298E8F4E006DA84C /* PresentationBoundary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationBoundary.swift; sourceTree = "<group>"; };
+		AE224041298E8FF0006DA84C /* InjectRepositories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InjectRepositories.swift; sourceTree = "<group>"; };
 		AE66053D298ADD7A006AF6C3 /* loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading.json; sourceTree = "<group>"; };
 		AE660540298ADDBD006AF6C3 /* GenericLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericLoader.swift; sourceTree = "<group>"; };
 		AE76452229869C150027148F /* Mulish-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mulish-Black.ttf"; sourceTree = "<group>"; };
@@ -170,6 +174,22 @@
 			path = Localization;
 			sourceTree = "<group>";
 		};
+		AE22403B298E8EB6006DA84C /* Di */ = {
+			isa = PBXGroup;
+			children = (
+				AE224041298E8FF0006DA84C /* InjectRepositories.swift */,
+			);
+			path = Di;
+			sourceTree = "<group>";
+		};
+		AE22403E298E8ECC006DA84C /* Boundaries */ = {
+			isa = PBXGroup;
+			children = (
+				AE22403F298E8F4E006DA84C /* PresentationBoundary.swift */,
+			);
+			path = Boundaries;
+			sourceTree = "<group>";
+		};
 		AE66053C298ADCDD006AF6C3 /* Animation */ = {
 			isa = PBXGroup;
 			children = (
@@ -241,6 +261,8 @@
 		AEB497E72985D53E000FFD8A /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				AE22403B298E8EB6006DA84C /* Di */,
+				AE22403E298E8ECC006DA84C /* Boundaries */,
 				AEB498212985D844000FFD8A /* Base */,
 				AEB498312985E9F9000FFD8A /* Components */,
 				AEB4982A2985E85F000FFD8A /* Utils */,
@@ -588,6 +610,7 @@
 				AEB497EA2985D53E000FFD8A /* Presentation.docc in Sources */,
 				AE223F08298E6472006DA84C /* LanguageManager.swift in Sources */,
 				AEB4983F2985ECC0000FFD8A /* ColorPalette.swift in Sources */,
+				AE224042298E8FF0006DA84C /* InjectRepositories.swift in Sources */,
 				AE223F01298E635E006DA84C /* AdaptedConstraint.swift in Sources */,
 				AE223F04298E63D5006DA84C /* Str.swift in Sources */,
 				AEB4985B2985F7C7000FFD8A /* TextStyle.swift in Sources */,
@@ -598,6 +621,7 @@
 				AEB498452985F104000FFD8A /* UIView_Ext.swift in Sources */,
 				AEB498492985F5AF000FFD8A /* Font.swift in Sources */,
 				AEB498302985E9C4000FFD8A /* BaseWindow.swift in Sources */,
+				AE224040298E8F4E006DA84C /* PresentationBoundary.swift in Sources */,
 				AEB498272985D99E000FFD8A /* Coordinator.swift in Sources */,
 				AEB498382985EA6F000FFD8A /* FeedbackMessageView.swift in Sources */,
 			);

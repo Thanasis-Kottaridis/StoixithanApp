@@ -17,7 +17,10 @@ public class SportsRepositoryImpl: SportsRepository {
     
     public init() {}
     
-    public func getSpotsWithEvents(completion: @escaping (Domain.Result<[Domain.Sport]?, Domain.BaseException>) -> Void) {
+    public func getSpotsWithEvents(
+        forceUpdate: Bool,
+        completion: @escaping (Domain.Result<[Domain.Sport]?, Domain.BaseException>) -> Void
+    ) {
         sessionManager.request(SportsApi.sportsApi)
             .validateResponseWrapper(
                 fromType: [SportDto].self,
@@ -41,13 +44,16 @@ public class SportsRepositoryImpl: SportsRepository {
             )
     }
     
+    public func updateFavoriteEvent(byId id: String, isFavorite: Bool) {
+        EventDaoImpl().updateFavoriteEvent(byId: id, isFavorite: isFavorite)
+    }
+}
+
+// MARK: - Helper functions
+extension SportsRepositoryImpl {
     public func getAllEvents() -> [Event] {
         let entities = EventDaoImpl().getAllEvents()
         return EventEntityMapper().mapDomainLists(modelList: entities)
-    }
-    
-    public func updateFavoriteEvent(byId id: String, isFavorite: Bool) {
-        EventDaoImpl().updateFavoriteEvent(byId: id, isFavorite: isFavorite)
     }
     
     public func getEvent(byId id: String) -> Event {

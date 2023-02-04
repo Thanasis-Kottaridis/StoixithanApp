@@ -11,4 +11,7 @@ import Foundation
 
 enum SportsLandingEvents {
     // Set enum cases here
+    case fetchData
+    case refreshData
+    case selectFavoriteEvent(eventId: String)
 }
