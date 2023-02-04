@@ -1,9 +1,9 @@
 //
-//  ___FILENAME___
-//  ___PROJECTNAME___
+//  SportsLandingState.swift
+//  Sports
 //
-//  Created ___FULLUSERNAME___ on ___DATE___.
-//  Copyright © ___YEAR___ . All rights reserved.
+//  Created thanos kottaridis on 4/2/23.
+//  Copyright © 2023 . All rights reserved.
 //
 //
 
@@ -11,7 +11,7 @@ import Foundation
 import Domain
 import Presentation
 
-class ___VARIABLE_moduleName___State: BaseState {
+class SportsLandingState: BaseState {
     
     // Set variables here
     let isLoading: Bool
@@ -28,8 +28,8 @@ class ___VARIABLE_moduleName___State: BaseState {
     func copy(
         isLoading: Bool? = nil,
         isOnline: Bool? = nil
-    ) -> ___VARIABLE_moduleName___State {
-        return ___VARIABLE_moduleName___State(
+    ) -> SportsLandingState {
+        return SportsLandingState(
             isLoading: isLoading ?? self.isLoading,
             isOnline: isOnline ?? self.isOnline
         )
@@ -39,6 +39,6 @@ class ___VARIABLE_moduleName___State: BaseState {
         isLoading: Bool?,
         isOnline: Bool?
     ) -> Self {
-        return self.copy(isLoading: isLoading, isOnline: isOnline ) as! Self
+        return self.copy(isLoading: isLoading, isOnline: isOnline) as! Self
     }
 }

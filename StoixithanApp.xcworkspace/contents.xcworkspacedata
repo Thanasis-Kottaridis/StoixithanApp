@@ -11,6 +11,9 @@
       location = "group:Presentation/Presentation.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:Sports/Sports.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:/Users/thanoskottaridis/Coding/cognity/ios_projects/Stoixithan/StoixithanApp.xcodeproj">
    </FileRef>
    <FileRef

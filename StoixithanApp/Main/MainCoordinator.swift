@@ -8,8 +8,9 @@
 import UIKit
 import Domain
 import Presentation
+import Sports
 
-struct GoToTest: Action {}
+struct GoToSports: Action {}
 
 class MainCoordinator: Coordinator {
     var parentCoordinator: Presentation.Coordinator?
@@ -24,26 +25,21 @@ class MainCoordinator: Coordinator {
         parentCoordinator = nil
         self.navigationController = navigationController ?? UINavigationController()
     }
-
+    
     func start() {
-        handleAction(action: GoToTest())
-        handleAction(action: ShowLoaderAction())
-
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
-            self.handleAction(action: HideLoaderAction())
-            self.handleAction(action: PresentFeedbackAction(feedbackMessage: FeedbackMessage(message: Str.NETWORK_ERROR_TITLE, type: .error)))
-        }
+        handleAction(action: GoToSports())
     }
 }
 
 extension MainCoordinator {
     func handleAction(action: Action) {
         switch action {
-        case _ as GoToTest:
-            let viewModel = TestViewModel(actionHandler: self)
-            let vc = TestVC(viewModel: viewModel)
-            navigate(to: vc, with: .push)
-            handleAction(action: ShowLoaderAction())
+        case _ as GoToSports:
+            let sportsCoord = SportsCoordinator(
+                navigationController: self.navigationController,
+                parentCoordinator: self
+            )
+            self.addChild(coordinator: sportsCoord, with: .sportsCoordinator)
         default:
             // Use super implementation of BaseActionHandler
             handleBaseAction(action: action)

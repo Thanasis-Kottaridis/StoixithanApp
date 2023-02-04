@@ -9,4 +9,5 @@ import Foundation
 
 public enum CoordinatorKey: String {
     case mainCoordinator
+    case sportsCoordinator
 }

@@ -66,6 +66,18 @@ end
 
 # ====================================
 #
+# SPORTS PODS
+#
+# ====================================
+
+target 'Sports' do
+  project './Sports/Sports.project'
+  use_frameworks!
+  presentation_pods
+end
+
+# ====================================
+#
 # APPLICATION TARGET
 #
 # ====================================
