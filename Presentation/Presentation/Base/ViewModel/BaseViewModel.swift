@@ -39,7 +39,7 @@ extension BaseErrorHandler {
     public func handleErrors(error: BaseException, withDefaultHandling: Bool = true) -> Bool {
         
         // handle error
-        let genericErrorMessage =  "Κάτι δεν πήγε καλά...\nΠροσπάθησε ξανά σε λίγο"
+        let genericErrorMessage = Str.SOMETHING_WENT_WRONG
         var feedback: FeedbackMessage? = nil
         
         if let throwable = error.throwable {
@@ -49,14 +49,14 @@ extension BaseErrorHandler {
             )
         } else if error.errorCode == 401 {
             feedback = FeedbackMessage(
-                message: "Η σύνδεση σου έληξε...\nΔοκίμασε να ξανασυνδεθείς!",
+                message: Str.LOGIN_SESSION_INVALIDATED,
                 type: .error
             )
         } else if ((-1100)..<(-1000)).contains(error.errorCode) {
             feedback = FeedbackMessage.getNetworkFeedbackMessage(isOnline: false)
         } else if withDefaultHandling {
             feedback = FeedbackMessage(
-                message: genericErrorMessage,
+                message: Str.NETWORK_ERROR_TITLE,
                 type: .error
             )
         }

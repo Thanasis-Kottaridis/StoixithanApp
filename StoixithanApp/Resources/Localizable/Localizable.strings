@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  StoixithanApp
+
+  Created by thanos kottaridis on 4/2/23.
+  
+*/
+// MARK: Generic Strings
+"SOMETHING_WENT_WRONG" = "Κάτι δεν πήγε καλά...\nΠροσπάθησε ξανά σε λίγο";
+"LOGIN_SESSION_INVALIDATED" = "Η σύνδεση σου έληξε...\nΔοκίμασε να ξανασυνδεθείς!";
+"NETWORK_ERROR_TITLE" = "Χάθηκε το δίκτυο";

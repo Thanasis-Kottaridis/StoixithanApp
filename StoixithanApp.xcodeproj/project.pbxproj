@@ -10,6 +10,7 @@
 		06A7C936DBBBD5E1126E40CC /* Pods_StoixithanApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B3A8F3DB73A4F1EDAA61769 /* Pods_StoixithanApp.framework */; };
 		0D3F4CD928DD143DB70DEA00 /* Pods_StoixithanApp_StoixithanAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A580A674C444020D77495999 /* Pods_StoixithanApp_StoixithanAppUITests.framework */; };
 		6F6DA8F590283311843C4896 /* Pods_StoixithanAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 002A9A4E11E1624048A757CE /* Pods_StoixithanAppTests.framework */; };
+		AE223F11298E6566006DA84C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = AE223F10298E6566006DA84C /* Localizable.strings */; };
 		AE660560298AE2A4006AF6C3 /* TestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE66055E298AE2A4006AF6C3 /* TestVC.swift */; };
 		AE660561298AE2A4006AF6C3 /* TestVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE66055F298AE2A4006AF6C3 /* TestVC.xib */; };
 		AE7645562986AB810027148F /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7645552986AB810027148F /* AppConfig.swift */; };
@@ -114,6 +115,7 @@
 		6201C7A3B26616978D9409D1 /* Pods-StoixithanApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StoixithanApp.debug.xcconfig"; path = "Target Support Files/Pods-StoixithanApp/Pods-StoixithanApp.debug.xcconfig"; sourceTree = "<group>"; };
 		6EEFA72704AE0EC5BB03E71C /* Pods-StoixithanApp-StoixithanAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StoixithanApp-StoixithanAppUITests.release.xcconfig"; path = "Target Support Files/Pods-StoixithanApp-StoixithanAppUITests/Pods-StoixithanApp-StoixithanAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		A580A674C444020D77495999 /* Pods_StoixithanApp_StoixithanAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StoixithanApp_StoixithanAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE223F10298E6566006DA84C /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		AE66055E298AE2A4006AF6C3 /* TestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestVC.swift; sourceTree = "<group>"; };
 		AE66055F298AE2A4006AF6C3 /* TestVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestVC.xib; sourceTree = "<group>"; };
 		AE7645552986AB810027148F /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
@@ -170,6 +172,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AE223F09298E653C006DA84C /* Localizable */ = {
+			isa = PBXGroup;
+			children = (
+				AE223F10298E6566006DA84C /* Localizable.strings */,
+			);
+			path = Localizable;
+			sourceTree = "<group>";
+		};
 		AE7645542986AB590027148F /* Application */ = {
 			isa = PBXGroup;
 			children = (
@@ -195,6 +205,7 @@
 		AE7645582986ABB10027148F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				AE223F09298E653C006DA84C /* Localizable */,
 				AEDBEAFD29856CB5000448A9 /* Assets.xcassets */,
 				AEDBEAFF29856CB5000448A9 /* LaunchScreen.storyboard */,
 				AEDBEB0229856CB5000448A9 /* Info.plist */,
@@ -483,6 +494,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AEDBEB0129856CB5000448A9 /* LaunchScreen.storyboard in Resources */,
+				AE223F11298E6566006DA84C /* Localizable.strings in Resources */,
 				AEDBEAFE29856CB5000448A9 /* Assets.xcassets in Resources */,
 				AE660561298AE2A4006AF6C3 /* TestVC.xib in Resources */,
 			);

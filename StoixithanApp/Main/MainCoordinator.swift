@@ -31,7 +31,7 @@ class MainCoordinator: Coordinator {
 
         DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
             self.handleAction(action: HideLoaderAction())
-            self.handleAction(action: PresentFeedbackAction(feedbackMessage: FeedbackMessage(message: "Message Works", type: .success)))
+            self.handleAction(action: PresentFeedbackAction(feedbackMessage: FeedbackMessage(message: Str.NETWORK_ERROR_TITLE, type: .error)))
         }
     }
 }
