@@ -15,23 +15,29 @@ class ___VARIABLE_moduleName___State: BaseState {
     
     // Set variables here
     let isLoading: Bool
-
-   init(
-        isLoading: Bool = false
-    ) {
-        self.isLoading = isLoading
-    }
+    var isOnline: Bool
+    
+    init(
+         isLoading: Bool = false,
+         isOnline: Bool = true
+     ) {
+         self.isLoading = isLoading
+         self.isOnline = isOnline
+     }
     
     func copy(
-       isLoading: Bool? = false
+        sLoading: Bool? = nil,
+        isOnline: Bool? = nil
     ) -> ___VARIABLE_moduleName___State {
         return ___VARIABLE_moduleName___State(
-             isLoading: isLoading ?? self.isLoading
+            isLoading: isLoading ?? self.isLoading,
+            isOnline: isOnline ?? self.isOnline
         )
     }
     
     func baseCopy(
-        isLoading: Bool? = nil
+        isLoading: Bool?,
+        isOnline: Bool?
     ) -> Self {
         return self.copy(isLoading: isLoading) as! Self
     }

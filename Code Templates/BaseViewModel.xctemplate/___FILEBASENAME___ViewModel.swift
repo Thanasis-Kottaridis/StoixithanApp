@@ -14,9 +14,9 @@ import RxSwift
 import RxCocoa
 import RxDataSources
 
-class ___VARIABLE_moduleName___ViewModel: BaseViewModel, ___VARIABLE_actionDispatcherName___ActionDispatcher {
+class ___VARIABLE_moduleName___ViewModel: BaseViewModel {
     
-    weak var actionHandler: ___VARIABLE_actionHandlerName___ActionHandler?
+    weak var actionHandler: BaseActionHandler?
     
     typealias State = ___VARIABLE_moduleName___State
     typealias Event = ___VARIABLE_moduleName___Events
@@ -27,7 +27,7 @@ class ___VARIABLE_moduleName___ViewModel: BaseViewModel, ___VARIABLE_actionDispa
         return state.asObservable()
     }
     
-    init(actionHandler: ___VARIABLE_actionHandlerName___ActionHandler) {
+    init(actionHandler: BaseActionHandler) {
         self.actionHandler = actionHandler
         state = BehaviorRelay(value: ___VARIABLE_moduleName___State())
         commonInit()
