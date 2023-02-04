@@ -10,6 +10,7 @@ import Domain
 import Presentation
 import Sports
 
+struct GoToTest: Action {}
 struct GoToSports: Action {}
 
 class MainCoordinator: Coordinator {
@@ -40,6 +41,10 @@ extension MainCoordinator {
                 parentCoordinator: self
             )
             self.addChild(coordinator: sportsCoord, with: .sportsCoordinator)
+        case _ as GoToTest:
+            let viewModel = TestViewModel(actionHandler: self)
+            let vc = TestVC(viewModel: viewModel)
+            navigate(to: vc, with: .push)
         default:
             // Use super implementation of BaseActionHandler
             handleBaseAction(action: action)

@@ -26,26 +26,26 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="48"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Nzf-vT-FsF">
-                                        <rect key="frame" x="8" y="8" width="304" height="32"/>
+                                        <rect key="frame" x="16" y="8" width="288" height="32"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SoX-Re-Xrw">
                                                 <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="32" id="BtA-MV-4ab"/>
-                                                    <constraint firstAttribute="height" constant="32" id="Pk7-rb-Dxi"/>
+                                                    <constraint firstAttribute="width" constant="32" id="BtA-MV-4ab" customClass="AdaptedConstraint" customModule="Presentation"/>
+                                                    <constraint firstAttribute="height" constant="32" id="Pk7-rb-Dxi" customClass="AdaptedConstraint" customModule="Presentation"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QUs-rO-Fvp">
-                                                <rect key="frame" x="40" y="0.0" width="224" height="32"/>
+                                                <rect key="frame" x="40" y="0.0" width="208" height="32"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1UP-5l-0QX">
-                                                <rect key="frame" x="272" y="0.0" width="32" height="32"/>
+                                                <rect key="frame" x="256" y="0.0" width="32" height="32"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="32" id="G8C-a7-8Zv"/>
-                                                    <constraint firstAttribute="width" constant="32" id="aDj-Je-2Bn"/>
+                                                    <constraint firstAttribute="height" constant="32" id="G8C-a7-8Zv" customClass="AdaptedConstraint" customModule="Presentation"/>
+                                                    <constraint firstAttribute="width" constant="32" id="aDj-Je-2Bn" customClass="AdaptedConstraint" customModule="Presentation"/>
                                                 </constraints>
                                             </imageView>
                                         </subviews>
@@ -57,15 +57,18 @@
                                     </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="Nzf-vT-FsF" firstAttribute="leading" secondItem="9rE-Bb-mXx" secondAttribute="leading" constant="8" id="78U-UX-sav"/>
-                                    <constraint firstAttribute="trailing" secondItem="Nzf-vT-FsF" secondAttribute="trailing" constant="8" id="Ftr-S7-L3z"/>
-                                    <constraint firstAttribute="bottom" secondItem="Nzf-vT-FsF" secondAttribute="bottom" constant="8" id="UX2-xt-Rrb"/>
-                                    <constraint firstItem="Nzf-vT-FsF" firstAttribute="top" secondItem="9rE-Bb-mXx" secondAttribute="top" constant="8" id="VJk-s4-xby"/>
+                                    <constraint firstItem="Nzf-vT-FsF" firstAttribute="leading" secondItem="9rE-Bb-mXx" secondAttribute="leading" constant="16" id="78U-UX-sav" customClass="AdaptedConstraint" customModule="Presentation"/>
+                                    <constraint firstAttribute="trailing" secondItem="Nzf-vT-FsF" secondAttribute="trailing" constant="16" id="Ftr-S7-L3z" customClass="AdaptedConstraint" customModule="Presentation"/>
+                                    <constraint firstAttribute="bottom" secondItem="Nzf-vT-FsF" secondAttribute="bottom" constant="8" id="UX2-xt-Rrb" customClass="AdaptedConstraint" customModule="Presentation"/>
+                                    <constraint firstItem="Nzf-vT-FsF" firstAttribute="top" secondItem="9rE-Bb-mXx" secondAttribute="top" constant="8" id="VJk-s4-xby" customClass="AdaptedConstraint" customModule="Presentation"/>
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="8b0-G9-pSy">
                                 <rect key="frame" x="0.0" y="48" width="320" height="140"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="140" id="KSx-Ed-9kL"/>
+                                </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="5hY-oZ-6Y0">
                                     <size key="itemSize" width="150" height="150"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>

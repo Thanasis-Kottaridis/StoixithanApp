@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct Sport: Codable {
+public struct Sport: Codable, Equatable {
    public var id: String?
    public var description: String?
    public var events: [Event]?

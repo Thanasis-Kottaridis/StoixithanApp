@@ -15,23 +15,28 @@ class SportsLandingState: BaseState {
     
     // Set variables here
     let isLoading: Bool
-    var isOnline: Bool
+    let isOnline: Bool
+    let spotrsList: [Sport]
     
     init(
          isLoading: Bool = false,
-         isOnline: Bool = true
+         isOnline: Bool = true,
+         spotrsList: [Sport] = []
      ) {
          self.isLoading = isLoading
          self.isOnline = isOnline
+         self.spotrsList = spotrsList
      }
     
     func copy(
         isLoading: Bool? = nil,
-        isOnline: Bool? = nil
+        isOnline: Bool? = nil,
+        spotrsList: [Sport]? = nil
     ) -> SportsLandingState {
         return SportsLandingState(
             isLoading: isLoading ?? self.isLoading,
-            isOnline: isOnline ?? self.isOnline
+            isOnline: isOnline ?? self.isOnline,
+            spotrsList: spotrsList ?? self.spotrsList
         )
     }
     

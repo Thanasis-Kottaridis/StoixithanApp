@@ -19,6 +19,7 @@ class SportsTableViewCell: UITableViewCell {
     @IBOutlet weak var eventsCollectionView: UICollectionView!
     
     // MARK: - Vars
+    static let kCONTENT_XIB_NAME = "SportsTableViewCell"
     private var sport: Sport?
     private var isExpanded: Bool = true
     
@@ -31,11 +32,13 @@ class SportsTableViewCell: UITableViewCell {
     }
     
     func setUpView(sport: Sport) {
+        self.sport = sport
         setUpHeaderView(sport: sport)
+        setUpCollectionView()
     }
     
     private func setUpHeaderView(sport: Sport) {
-        sportHeaderContainer.backgroundColor = ColorPalette.DarkBlue.withAlpha(0.5)
+        sportHeaderContainer.backgroundColor = ColorPalette.DarkBlue.value
         sportDescLbl.attributedText = sport.description?.with(.style_16_20(weight: .BLACK, color: .White))
         sportImg.isHidden = sport.sportIcon == nil
         sportImg.image = sport.sportIcon
@@ -43,9 +46,8 @@ class SportsTableViewCell: UITableViewCell {
     }
     
     private func setUpCollectionView() {
-        
+//        eventsCollectionView.isHidden = true
     }
-    
 }
 
 // MARK: - EVENTS MODEL UI EXT

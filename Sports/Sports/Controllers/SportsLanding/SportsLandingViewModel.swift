@@ -61,7 +61,9 @@ class SportsLandingViewModel: BaseViewModel {
             
             switch result {
             case .Success(let response):
-                print("TestViewModel Debug..... response data \(response?.count)")
+                self.state.accept(
+                    self.state.value.copy(spotrsList: response)
+                )
             case .Failure(let error):
                 self.handleErrors(error: error)
             }

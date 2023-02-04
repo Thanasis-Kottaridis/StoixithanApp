@@ -18,7 +18,7 @@ public class SportsRepositoryImpl: SportsRepository {
     public init() {}
     
     public func getSpotsWithEvents(
-        forceUpdate: Bool,
+        _ forceUpdate: Bool,
         completion: @escaping (Domain.Result<[Domain.Sport]?, Domain.BaseException>) -> Void
     ) {
         sessionManager.request(SportsApi.sportsApi)

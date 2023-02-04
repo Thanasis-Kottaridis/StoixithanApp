@@ -10,11 +10,17 @@ import Domain
 import Presentation
 
 class EventCollectionViewCell: UICollectionViewCell {
+    
+    // MARK: - Outlets
     @IBOutlet weak var isFavoriteImg: UIImageView!
     @IBOutlet weak var participant1Lbl: UILabel!
     @IBOutlet weak var participant2Lbl: UILabel!
     @IBOutlet weak var countDownContainer: UIView!
     @IBOutlet weak var countDownLbl: UILabel!
+    
+    // MARK: - Vars
+    static let kCONTENT_XIB_NAME = "EventCollectionViewCell"
+    private var event: Event?
 
     override func prepareForReuse() {
         super.prepareForReuse()
@@ -25,6 +31,7 @@ class EventCollectionViewCell: UICollectionViewCell {
     }
     
     func setUpCell(event: Event) {
+        self.event = event
         // set up participant lbl
         participant1Lbl.attributedText = event.eventParticipants[safe: 0]?
             .with(.style_16_20(weight: .REGULAR, color: .RegularBlue))
@@ -33,9 +40,11 @@ class EventCollectionViewCell: UICollectionViewCell {
         
         // set up isFavorite Icon
         isFavoriteImg.image = event.isFavoriteUIImage
+        
+        setUpCountDownView(event: event)
     }
     
-    private func setUpCountDownView() {
+    private func setUpCountDownView(event: Event) {
         countDownContainer.layer.cornerRadius = CGFloat(8).adaptedCGFloat()
         countDownContainer.layer.borderColor = ColorPalette.RegularBlue.value.cgColor
         countDownContainer.layer.borderWidth = CGFloat(2).adaptedCGFloat()

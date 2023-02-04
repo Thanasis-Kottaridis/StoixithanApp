@@ -45,7 +45,6 @@ extension SportsCoordinator {
             let viewModel = SportsLandingViewModel(actionHandler: self)
             let vc = SportsLandingVC(viewModel: viewModel)
             navigate(to: vc, with: .push)
-            handleAction(action: ShowLoaderAction())
         default:
             // Use super implementation of BaseActionHandler
             handleBaseAction(action: action)

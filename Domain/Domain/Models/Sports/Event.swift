@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct Event: Codable {
+public struct Event: Codable, Equatable {
     public var id: String?
     public var sportId: String?
     public var description: String?
