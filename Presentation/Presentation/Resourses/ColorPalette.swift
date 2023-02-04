@@ -30,15 +30,15 @@ public extension ColorPalette {
         
         switch self {
         case .DarkBlue:
-            instanceColor = UIColor(hexString:"#00265E")
+            instanceColor = UIColor(hexString:"#003162")
         case .RegularBlue:
-            instanceColor = UIColor(hexString: "#003476")
+            instanceColor = UIColor(hexString: "#0066CC")
         case .LightBlue:
             instanceColor = UIColor(hexString: "#00AEEF")
         case .Black:
             instanceColor = UIColor(hexString: "#212529")
         case .White:
-            instanceColor = UIColor(hexString: "#FFFFFF")
+            instanceColor = UIColor(hexString: "#F2F2F2")
         case .Gray:
             instanceColor = UIColor(hexString: "#F4F4F4")
         case .DarkGray:

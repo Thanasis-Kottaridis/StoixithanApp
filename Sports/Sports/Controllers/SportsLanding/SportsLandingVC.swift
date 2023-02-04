@@ -11,7 +11,12 @@ import Presentation
 class SportsLandingVC: BaseVC {
 
     private let viewModel: SportsLandingViewModel
-
+    
+    // MARK: - Outlets
+    
+    @IBOutlet weak var genericHeader: UIView!
+    @IBOutlet weak var sportsTV: UITableView!
+    
     init(viewModel: SportsLandingViewModel) {
         self.viewModel = viewModel
         super.init(
@@ -33,6 +38,10 @@ class SportsLandingVC: BaseVC {
     }
     
     override func setUpObservers() {
+        
+    }
+    
+    private func setUpTableView() {
         
     }
 }

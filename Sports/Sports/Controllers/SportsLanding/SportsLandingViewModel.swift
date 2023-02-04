@@ -46,7 +46,7 @@ class SportsLandingViewModel: BaseViewModel {
         case .refreshData:
             getSportsWithEvents(forceUpdate: true)
         case .selectFavoriteEvent(let eventId):
-            <#code#>
+            selectFavoriteEvent(eventId: eventId)
         }
     }
     

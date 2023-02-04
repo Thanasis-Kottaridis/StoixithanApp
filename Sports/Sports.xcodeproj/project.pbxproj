@@ -19,6 +19,10 @@
 		AE22401F298E8967006DA84C /* SportsLandingEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE22401C298E8967006DA84C /* SportsLandingEvents.swift */; };
 		AE224020298E8967006DA84C /* SportsLandingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE22401D298E8967006DA84C /* SportsLandingViewModel.swift */; };
 		AE224021298E8967006DA84C /* SportsLandingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE22401E298E8967006DA84C /* SportsLandingState.swift */; };
+		AE224048298EAF86006DA84C /* EventCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE224046298EAF86006DA84C /* EventCollectionViewCell.swift */; };
+		AE224049298EAF87006DA84C /* EventCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE224047298EAF86006DA84C /* EventCollectionViewCell.xib */; };
+		AE963C2A298ECCC20030AC05 /* SportsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE963C28298ECCC20030AC05 /* SportsTableViewCell.swift */; };
+		AE963C2B298ECCC20030AC05 /* SportsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE963C29298ECCC20030AC05 /* SportsTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +65,10 @@
 		AE22401D298E8967006DA84C /* SportsLandingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsLandingViewModel.swift; sourceTree = "<group>"; };
 		AE22401E298E8967006DA84C /* SportsLandingState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsLandingState.swift; sourceTree = "<group>"; };
 		AE224023298E8CA8006DA84C /* Pods_Presentation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_Presentation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE224046298EAF86006DA84C /* EventCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCollectionViewCell.swift; sourceTree = "<group>"; };
+		AE224047298EAF86006DA84C /* EventCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventCollectionViewCell.xib; sourceTree = "<group>"; };
+		AE963C28298ECCC20030AC05 /* SportsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsTableViewCell.swift; sourceTree = "<group>"; };
+		AE963C29298ECCC20030AC05 /* SportsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SportsTableViewCell.xib; sourceTree = "<group>"; };
 		D1FE2F5BE5084658FE2A332A /* Pods-Sports.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sports.debug.xcconfig"; path = "Target Support Files/Pods-Sports/Pods-Sports.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -170,6 +178,7 @@
 		AE224015298E8708006DA84C /* SportsLanding */ = {
 			isa = PBXGroup;
 			children = (
+				AE224043298EAADF006DA84C /* Components */,
 				AE224022298E897E006DA84C /* Interactors */,
 				AE224018298E8833006DA84C /* SportsLandingVC.swift */,
 				AE224019298E8833006DA84C /* SportsLandingVC.xib */,
@@ -185,6 +194,17 @@
 				AE22401E298E8967006DA84C /* SportsLandingState.swift */,
 			);
 			path = Interactors;
+			sourceTree = "<group>";
+		};
+		AE224043298EAADF006DA84C /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				AE224046298EAF86006DA84C /* EventCollectionViewCell.swift */,
+				AE224047298EAF86006DA84C /* EventCollectionViewCell.xib */,
+				AE963C28298ECCC20030AC05 /* SportsTableViewCell.swift */,
+				AE963C29298ECCC20030AC05 /* SportsTableViewCell.xib */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		BEEA0B00564021D93EFA06FE /* Pods */ = {
@@ -314,6 +334,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE22401B298E8833006DA84C /* SportsLandingVC.xib in Resources */,
+				AE963C2B298ECCC20030AC05 /* SportsTableViewCell.xib in Resources */,
+				AE224049298EAF87006DA84C /* EventCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,6 +379,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE224020298E8967006DA84C /* SportsLandingViewModel.swift in Sources */,
+				AE224048298EAF86006DA84C /* EventCollectionViewCell.swift in Sources */,
+				AE963C2A298ECCC20030AC05 /* SportsTableViewCell.swift in Sources */,
 				AE223FDF298E8663006DA84C /* Sports.docc in Sources */,
 				AE22401F298E8967006DA84C /* SportsLandingEvents.swift in Sources */,
 				AE22401A298E8833006DA84C /* SportsLandingVC.swift in Sources */,
