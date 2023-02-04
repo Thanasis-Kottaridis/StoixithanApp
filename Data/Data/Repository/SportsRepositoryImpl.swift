@@ -11,10 +11,14 @@ import Alamofire
 
 public class SportsRepositoryImpl: SportsRepository {
     
+    @Injected(\.sportDao)
+    private var sportDao: SportDao
+    private let sessionManager: Session = InjectedValues[\.networkProvider].manager
+    
     public init() {}
     
     public func getSpotsWithEvents(completion: @escaping (Domain.Result<[Domain.Sport]?, Domain.BaseException>) -> Void) {
-        AF.request(SportsApi.sportsApi)
+        sessionManager.request(SportsApi.sportsApi)
             .validateResponseWrapper(
                 fromType: [SportDto].self,
                 mapperType: [Sport].self,
