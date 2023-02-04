@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AE223ED2298DAF3F006DA84C /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE223ED1298DAF3E006DA84C /* RealmManager.swift */; };
+		AE223ED5298DB0E3006DA84C /* SportEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE223ED4298DB0E3006DA84C /* SportEntity.swift */; };
+		AE223ED8298DB689006DA84C /* SportsDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE223ED7298DB689006DA84C /* SportsDao.swift */; };
+		AE223EDA298DDECF006DA84C /* EventEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE223ED9298DDECF006DA84C /* EventEntity.swift */; };
+		AE223EDD298DDF09006DA84C /* SportEntityMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE223EDC298DDF09006DA84C /* SportEntityMapper.swift */; };
+		AE223EDF298DDF2B006DA84C /* EventEntityMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE223EDE298DDF2B006DA84C /* EventEntityMapper.swift */; };
+		AE223EE2298DDFC7006DA84C /* EventsDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE223EE1298DDFC7006DA84C /* EventsDao.swift */; };
+		AE223EE4298DE0B5006DA84C /* InjectDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE223EE3298DE0B5006DA84C /* InjectDependencies.swift */; };
+		AE223EE7298DE26C006DA84C /* SportsRepositoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE223EE6298DE26C006DA84C /* SportsRepositoryTest.swift */; };
+		AE223EEC298DF4C0006DA84C /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE223EEB298DF4C0006DA84C /* NetworkProvider.swift */; };
 		AEB497C52985D1DB000FFD8A /* Data.docc in Sources */ = {isa = PBXBuildFile; fileRef = AEB497C42985D1DB000FFD8A /* Data.docc */; };
 		AEB497CB2985D1DB000FFD8A /* Data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEB497C02985D1DB000FFD8A /* Data.framework */; };
 		AEB497D02985D1DB000FFD8A /* DataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB497CF2985D1DB000FFD8A /* DataTests.swift */; };
@@ -54,6 +64,16 @@
 		2AC74476E0B6870231223815 /* Pods_Data.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Data.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		358E04629445787516992CBF /* Pods-Data.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Data.debug.xcconfig"; path = "Target Support Files/Pods-Data/Pods-Data.debug.xcconfig"; sourceTree = "<group>"; };
 		ACA2321B4679D0AA6518C04D /* Pods-Data.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Data.release.xcconfig"; path = "Target Support Files/Pods-Data/Pods-Data.release.xcconfig"; sourceTree = "<group>"; };
+		AE223ED1298DAF3E006DA84C /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
+		AE223ED4298DB0E3006DA84C /* SportEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportEntity.swift; sourceTree = "<group>"; };
+		AE223ED7298DB689006DA84C /* SportsDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsDao.swift; sourceTree = "<group>"; };
+		AE223ED9298DDECF006DA84C /* EventEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventEntity.swift; sourceTree = "<group>"; };
+		AE223EDC298DDF09006DA84C /* SportEntityMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportEntityMapper.swift; sourceTree = "<group>"; };
+		AE223EDE298DDF2B006DA84C /* EventEntityMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventEntityMapper.swift; sourceTree = "<group>"; };
+		AE223EE1298DDFC7006DA84C /* EventsDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsDao.swift; sourceTree = "<group>"; };
+		AE223EE3298DE0B5006DA84C /* InjectDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InjectDependencies.swift; sourceTree = "<group>"; };
+		AE223EE6298DE26C006DA84C /* SportsRepositoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsRepositoryTest.swift; sourceTree = "<group>"; };
+		AE223EEB298DF4C0006DA84C /* NetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProvider.swift; sourceTree = "<group>"; };
 		AEB497C02985D1DB000FFD8A /* Data.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Data.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEB497C32985D1DB000FFD8A /* Data.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Data.h; sourceTree = "<group>"; };
 		AEB497C42985D1DB000FFD8A /* Data.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = Data.docc; sourceTree = "<group>"; };
@@ -114,6 +134,68 @@
 			path = ../Pods;
 			sourceTree = "<group>";
 		};
+		AE223ECD298DAF18006DA84C /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				AE223ED6298DB66D006DA84C /* SportsStorage */,
+				AE223ED0298DAF29006DA84C /* RealmStorage */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
+		AE223ED0298DAF29006DA84C /* RealmStorage */ = {
+			isa = PBXGroup;
+			children = (
+				AE223ED1298DAF3E006DA84C /* RealmManager.swift */,
+			);
+			path = RealmStorage;
+			sourceTree = "<group>";
+		};
+		AE223ED3298DB06E006DA84C /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				AE223ED4298DB0E3006DA84C /* SportEntity.swift */,
+				AE223ED9298DDECF006DA84C /* EventEntity.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		AE223ED6298DB66D006DA84C /* SportsStorage */ = {
+			isa = PBXGroup;
+			children = (
+				AE223EE0298DDFB7006DA84C /* Dao */,
+				AE223EDB298DDEF2006DA84C /* Mappers */,
+				AE223ED3298DB06E006DA84C /* Entity */,
+			);
+			path = SportsStorage;
+			sourceTree = "<group>";
+		};
+		AE223EDB298DDEF2006DA84C /* Mappers */ = {
+			isa = PBXGroup;
+			children = (
+				AE223EDC298DDF09006DA84C /* SportEntityMapper.swift */,
+				AE223EDE298DDF2B006DA84C /* EventEntityMapper.swift */,
+			);
+			path = Mappers;
+			sourceTree = "<group>";
+		};
+		AE223EE0298DDFB7006DA84C /* Dao */ = {
+			isa = PBXGroup;
+			children = (
+				AE223ED7298DB689006DA84C /* SportsDao.swift */,
+				AE223EE1298DDFC7006DA84C /* EventsDao.swift */,
+			);
+			path = Dao;
+			sourceTree = "<group>";
+		};
+		AE223EE5298DE247006DA84C /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				AE223EE6298DE26C006DA84C /* SportsRepositoryTest.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
 		AEB497B62985D1DB000FFD8A = {
 			isa = PBXGroup;
 			children = (
@@ -140,6 +222,7 @@
 			children = (
 				AEF65901298C5040001B9EB1 /* Di */,
 				AEF658F4298C425E001B9EB1 /* Boundaries */,
+				AE223ECD298DAF18006DA84C /* Persistence */,
 				AEF65904298C5099001B9EB1 /* Network */,
 				AECC846F298C7D5300F0FA93 /* Repository */,
 				AECC8449298C696F00F0FA93 /* Utils */,
@@ -152,6 +235,7 @@
 		AEB497CE2985D1DB000FFD8A /* DataTests */ = {
 			isa = PBXGroup;
 			children = (
+				AE223EE5298DE247006DA84C /* Repository */,
 				AEB497CF2985D1DB000FFD8A /* DataTests.swift */,
 			);
 			path = DataTests;
@@ -237,6 +321,7 @@
 			isa = PBXGroup;
 			children = (
 				AECC8447298C695600F0FA93 /* DomainMapper.swift */,
+				AE223EEB298DF4C0006DA84C /* NetworkProvider.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -262,6 +347,7 @@
 			isa = PBXGroup;
 			children = (
 				AEF65902298C506A001B9EB1 /* InjectBoundries.swift */,
+				AE223EE3298DE0B5006DA84C /* InjectDependencies.swift */,
 			);
 			path = Di;
 			sourceTree = "<group>";
@@ -434,18 +520,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE223ED5298DB0E3006DA84C /* SportEntity.swift in Sources */,
+				AE223ED2298DAF3F006DA84C /* RealmManager.swift in Sources */,
 				AECC8448298C695600F0FA93 /* DomainMapper.swift in Sources */,
+				AE223EE2298DDFC7006DA84C /* EventsDao.swift in Sources */,
 				AEF65903298C506A001B9EB1 /* InjectBoundries.swift in Sources */,
+				AE223EDD298DDF09006DA84C /* SportEntityMapper.swift in Sources */,
 				AECC8471298C7D9400F0FA93 /* SportsRepositoryImpl.swift in Sources */,
 				AECC8475298C88CA00F0FA93 /* DataRequest_Ext.swift in Sources */,
 				AECC844E298C6A6800F0FA93 /* EventDto.swift in Sources */,
 				AEB497C52985D1DB000FFD8A /* Data.docc in Sources */,
 				AECC845F298C6C1A00F0FA93 /* SportMapper.swift in Sources */,
+				AE223ED8298DB689006DA84C /* SportsDao.swift in Sources */,
 				AECC844B298C69B000F0FA93 /* SportDto.swift in Sources */,
+				AE223EDF298DDF2B006DA84C /* EventEntityMapper.swift in Sources */,
+				AE223EEC298DF4C0006DA84C /* NetworkProvider.swift in Sources */,
+				AE223EDA298DDECF006DA84C /* EventEntity.swift in Sources */,
 				AEF658F8298C42AA001B9EB1 /* DataAppConfig.swift in Sources */,
 				AEF65906298C50D0001B9EB1 /* SportsApi.swift in Sources */,
 				AEF65900298C5012001B9EB1 /* DataBoundry.swift in Sources */,
 				AECC8461298C6C3200F0FA93 /* EventMapper.swift in Sources */,
+				AE223EE4298DE0B5006DA84C /* InjectDependencies.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -454,6 +549,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AEB497D02985D1DB000FFD8A /* DataTests.swift in Sources */,
+				AE223EE7298DE26C006DA84C /* SportsRepositoryTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
