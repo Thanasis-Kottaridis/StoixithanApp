@@ -16,6 +16,8 @@ class TestVC: BaseVC {
     
     @IBOutlet weak var iAmHereLbl: UILabel!
     @IBOutlet weak var goToTestCTA: UIButton!
+    @IBOutlet weak var getEventsCTA: UIButton!
+    @IBOutlet weak var updateFavorite: UIButton!
     
     init(viewModel: TestViewModel) {
         self.viewModel = viewModel
@@ -34,6 +36,14 @@ class TestVC: BaseVC {
     override func setUpObservers() {
         goToTestCTA.rx.tap.bind { [weak self] in
             self?.viewModel.onTriggeredEvent(event: .goToTest)
+        }.disposed(by: rx.disposeBag)
+        
+        getEventsCTA.rx.tap.bind { [weak self] in
+            self?.viewModel.onTriggeredEvent(event: .getEvents)
+        }.disposed(by: rx.disposeBag)
+        
+        updateFavorite.rx.tap.bind { [weak self] in
+            self?.viewModel.onTriggeredEvent(event: .updateFavorite)
         }.disposed(by: rx.disposeBag)
     }
 }

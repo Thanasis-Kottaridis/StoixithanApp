@@ -39,6 +39,10 @@ class TestViewModel: BaseViewModel {
         case .goToTest:
 //            actionHandler?.handleAction(action: GoToTest())
             testEndpoint()
+        case .getEvents:
+            testEvents()
+        case .updateFavorite:
+            updateFavorite()
         }
     }
     
@@ -58,5 +62,19 @@ class TestViewModel: BaseViewModel {
                 self.handleErrors(error: error)
             }
         }
+    }
+    
+    private func testEvents() {
+        let events = SportsRepositoryImpl().getAllEvents()
+        print("TestViewModel Debug..... total events count: \(events.count)")
+        print("TestViewModel Debug..... events[0] id: \(events[0].id) sport_id: \(events[0].sportId) id: \(events[0].isFavorite)")
+    }
+    
+    private func updateFavorite() {
+        
+        let event = SportsRepositoryImpl().getEvent(byId: "28331848")
+        SportsRepositoryImpl().updateFavoriteEvent(byId: event.id ?? "", isFavorite: !event.isFavorite)
+        let sport = SportsRepositoryImpl().getSport(byId: "HAND")
+        print("TestViewModel Debug..... sport events after update: \(sport)")
     }
 }

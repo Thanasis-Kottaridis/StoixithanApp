@@ -9,10 +9,12 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TestVC" customModule="CleanArchitectureTemplate" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TestVC" customModule="StoixithanApp" customModuleProvider="target">
             <connections>
+                <outlet property="getEventsCTA" destination="Eha-MK-vBv" id="MXe-cO-hMn"/>
                 <outlet property="goToTestCTA" destination="Rfv-ep-EGO" id="EiD-ar-Dhb"/>
                 <outlet property="iAmHereLbl" destination="9AE-qf-MmZ" id="c3d-Vz-JlB"/>
+                <outlet property="updateFavorite" destination="Qde-jB-wRL" id="GgP-Uo-m2r"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -28,18 +30,32 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rfv-ep-EGO">
-                    <rect key="frame" x="144" y="452.66666666666669" width="105" height="35"/>
+                    <rect key="frame" x="148" y="452.66666666666669" width="97" height="35"/>
                     <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain" title="Go To Test"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Fetch API"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eha-MK-vBv">
+                    <rect key="frame" x="143" y="503.66666666666674" width="107" height="35"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Get Events"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qde-jB-wRL">
+                    <rect key="frame" x="124.33333333333333" y="554.66666666666663" width="144.66666666666669" height="35"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Update Favorite"/>
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="9AE-qf-MmZ" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="4qd-1S-lMB"/>
+                <constraint firstItem="Qde-jB-wRL" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="7vY-4b-9LP"/>
                 <constraint firstItem="9AE-qf-MmZ" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="93h-Xo-mEa"/>
                 <constraint firstItem="Rfv-ep-EGO" firstAttribute="top" secondItem="9AE-qf-MmZ" secondAttribute="bottom" constant="16" id="IxI-4p-r83"/>
+                <constraint firstItem="Eha-MK-vBv" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="SGi-N9-NFk"/>
                 <constraint firstItem="Rfv-ep-EGO" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="UnC-qC-xHn"/>
+                <constraint firstItem="Qde-jB-wRL" firstAttribute="top" secondItem="Eha-MK-vBv" secondAttribute="bottom" constant="16" id="aje-dZ-Hd8"/>
+                <constraint firstItem="Eha-MK-vBv" firstAttribute="top" secondItem="Rfv-ep-EGO" secondAttribute="bottom" constant="16" id="urz-qh-0s4"/>
             </constraints>
             <point key="canvasLocation" x="140" y="21"/>
         </view>

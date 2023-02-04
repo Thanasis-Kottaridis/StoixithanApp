@@ -12,4 +12,6 @@ import Foundation
 enum TestEvents {
     // Set enum cases here
     case goToTest
+    case getEvents
+    case updateFavorite
 }

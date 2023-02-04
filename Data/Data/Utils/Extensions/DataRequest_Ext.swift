@@ -46,6 +46,7 @@ extension DataRequest {
         fromType: T.Type,
         mapperType: M.Type,
         mapper: @escaping (T) -> M?,
+        cacheLocaly: ((M?) -> Void)? = nil,
         completion: @escaping (Domain.Result<M?, BaseException>) -> Void
     ) -> Self where T: (Codable) {
         
@@ -55,6 +56,7 @@ extension DataRequest {
                 switch response.result {
                 case .success(let data):
                     let mappedData = mapper(data)
+                    cacheLocaly?(mappedData)
                     completion(Result.Success(mappedData))
                 case .failure(let error):
                     completion(Result.Failure(

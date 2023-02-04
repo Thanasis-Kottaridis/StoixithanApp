@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AE223ED2298DAF3F006DA84C /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE223ED1298DAF3E006DA84C /* RealmManager.swift */; };
+		AE223ED5298DB0E3006DA84C /* SportsEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE223ED4298DB0E3006DA84C /* SportsEntity.swift */; };
+		AE223ED8298DB689006DA84C /* SportsDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE223ED7298DB689006DA84C /* SportsDao.swift */; };
 		AEB497C52985D1DB000FFD8A /* Data.docc in Sources */ = {isa = PBXBuildFile; fileRef = AEB497C42985D1DB000FFD8A /* Data.docc */; };
 		AEB497CB2985D1DB000FFD8A /* Data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEB497C02985D1DB000FFD8A /* Data.framework */; };
 		AEB497D02985D1DB000FFD8A /* DataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB497CF2985D1DB000FFD8A /* DataTests.swift */; };
@@ -54,6 +57,9 @@
 		2AC74476E0B6870231223815 /* Pods_Data.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Data.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		358E04629445787516992CBF /* Pods-Data.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Data.debug.xcconfig"; path = "Target Support Files/Pods-Data/Pods-Data.debug.xcconfig"; sourceTree = "<group>"; };
 		ACA2321B4679D0AA6518C04D /* Pods-Data.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Data.release.xcconfig"; path = "Target Support Files/Pods-Data/Pods-Data.release.xcconfig"; sourceTree = "<group>"; };
+		AE223ED1298DAF3E006DA84C /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
+		AE223ED4298DB0E3006DA84C /* SportsEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsEntity.swift; sourceTree = "<group>"; };
+		AE223ED7298DB689006DA84C /* SportsDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsDao.swift; sourceTree = "<group>"; };
 		AEB497C02985D1DB000FFD8A /* Data.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Data.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEB497C32985D1DB000FFD8A /* Data.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Data.h; sourceTree = "<group>"; };
 		AEB497C42985D1DB000FFD8A /* Data.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = Data.docc; sourceTree = "<group>"; };
@@ -114,6 +120,40 @@
 			path = ../Pods;
 			sourceTree = "<group>";
 		};
+		AE223ECD298DAF18006DA84C /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				AE223ED6298DB66D006DA84C /* SportsStorage */,
+				AE223ED0298DAF29006DA84C /* RealmStorage */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
+		AE223ED0298DAF29006DA84C /* RealmStorage */ = {
+			isa = PBXGroup;
+			children = (
+				AE223ED1298DAF3E006DA84C /* RealmManager.swift */,
+			);
+			path = RealmStorage;
+			sourceTree = "<group>";
+		};
+		AE223ED3298DB06E006DA84C /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				AE223ED4298DB0E3006DA84C /* SportsEntity.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		AE223ED6298DB66D006DA84C /* SportsStorage */ = {
+			isa = PBXGroup;
+			children = (
+				AE223ED3298DB06E006DA84C /* Entity */,
+				AE223ED7298DB689006DA84C /* SportsDao.swift */,
+			);
+			path = SportsStorage;
+			sourceTree = "<group>";
+		};
 		AEB497B62985D1DB000FFD8A = {
 			isa = PBXGroup;
 			children = (
@@ -140,6 +180,7 @@
 			children = (
 				AEF65901298C5040001B9EB1 /* Di */,
 				AEF658F4298C425E001B9EB1 /* Boundaries */,
+				AE223ECD298DAF18006DA84C /* Persistence */,
 				AEF65904298C5099001B9EB1 /* Network */,
 				AECC846F298C7D5300F0FA93 /* Repository */,
 				AECC8449298C696F00F0FA93 /* Utils */,
@@ -434,6 +475,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE223ED5298DB0E3006DA84C /* SportsEntity.swift in Sources */,
+				AE223ED2298DAF3F006DA84C /* RealmManager.swift in Sources */,
 				AECC8448298C695600F0FA93 /* DomainMapper.swift in Sources */,
 				AEF65903298C506A001B9EB1 /* InjectBoundries.swift in Sources */,
 				AECC8471298C7D9400F0FA93 /* SportsRepositoryImpl.swift in Sources */,
@@ -441,6 +484,7 @@
 				AECC844E298C6A6800F0FA93 /* EventDto.swift in Sources */,
 				AEB497C52985D1DB000FFD8A /* Data.docc in Sources */,
 				AECC845F298C6C1A00F0FA93 /* SportMapper.swift in Sources */,
+				AE223ED8298DB689006DA84C /* SportsDao.swift in Sources */,
 				AECC844B298C69B000F0FA93 /* SportDto.swift in Sources */,
 				AEF658F8298C42AA001B9EB1 /* DataAppConfig.swift in Sources */,
 				AEF65906298C50D0001B9EB1 /* SportsApi.swift in Sources */,
