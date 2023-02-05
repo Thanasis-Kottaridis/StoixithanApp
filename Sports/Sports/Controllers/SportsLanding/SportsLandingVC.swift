@@ -63,7 +63,7 @@ class SportsLandingVC: BaseVC {
             .map { newState -> [SectionModel<String, Sport>] in
                 return [SectionModel(model: "section_const", items: newState.spotrsList)]
             }
-//            .distinctUntilChanged()
+            .distinctUntilChanged()
             .bind(to: sportsTV.rx.items(dataSource: sportsDataSource))
             .disposed(by: rx.disposeBag)
     }

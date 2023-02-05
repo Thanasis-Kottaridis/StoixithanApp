@@ -6,11 +6,14 @@
 //
 
 import UIKit
-import Presentation
 import Domain
+import Presentation
+import RxSwift
+import RxCocoa
+import RxDataSources
 
 class SportsTableViewCell: UITableViewCell {
-
+    
     // MARK: - Outlets
     @IBOutlet weak var sportHeaderContainer: UIView!
     @IBOutlet weak var sportImg: UIImageView!
@@ -22,6 +25,11 @@ class SportsTableViewCell: UITableViewCell {
     static let kCONTENT_XIB_NAME = "SportsTableViewCell"
     private var sport: Sport?
     private var isExpanded: Bool = true
+    private var sportObserver = PublishSubject<Sport>()
+    
+    override func awakeFromNib() {
+        setUpCollectionView()
+    }
     
     override func prepareForReuse() {
         super.prepareForReuse()
@@ -32,21 +40,39 @@ class SportsTableViewCell: UITableViewCell {
     }
     
     func setUpView(sport: Sport) {
-        self.sport = sport
+        sportObserver.onNext(sport)
         setUpHeaderView(sport: sport)
-        setUpCollectionView()
     }
     
     private func setUpHeaderView(sport: Sport) {
         sportHeaderContainer.backgroundColor = ColorPalette.DarkBlue.value
-        sportDescLbl.attributedText = sport.description?.with(.style_16_20(weight: .BLACK, color: .White))
+        sportDescLbl.attributedText = sport.description?.with(.style_16_20(
+            weight: .BLACK,
+            color: .White
+        ))
         sportImg.isHidden = sport.sportIcon == nil
         sportImg.image = sport.sportIcon
         rightArrowImg.image = UIImage(named: isExpanded ? "arrow-up" : "arrow-down")
     }
     
     private func setUpCollectionView() {
-//        eventsCollectionView.isHidden = true
+        eventsCollectionView.register(
+            UINib(
+                nibName: EventCollectionViewCell.kCONTENT_XIB_NAME,
+                bundle: Bundle(for: EventCollectionViewCell.self)
+            ),
+            forCellWithReuseIdentifier: EventCollectionViewCell.kCONTENT_XIB_NAME
+        )
+ 
+        sportObserver.observe(on: MainScheduler.instance)
+            .map{ $0.events ?? [] }
+            .distinctUntilChanged()
+            .bind(to: eventsCollectionView.rx.items(
+                cellIdentifier: EventCollectionViewCell.kCONTENT_XIB_NAME,
+                cellType: EventCollectionViewCell.self
+            )) { indexPath, item, cell in
+                cell.setUpCell(event: item)
+            }.disposed(by: rx.disposeBag)
     }
 }
 
