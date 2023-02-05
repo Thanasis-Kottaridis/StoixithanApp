@@ -33,6 +33,8 @@
 		AE7645482986A3090027148F /* Mulish-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AE76452229869C150027148F /* Mulish-Black.ttf */; };
 		AE7645672986D0870027148F /* BaseNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7645662986D0870027148F /* BaseNavigation.swift */; };
 		AE76456C2986D2460027148F /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE76456B2986D2460027148F /* BaseVC.swift */; };
+		AEB35465299008A400252427 /* GenericHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB35464299008A400252427 /* GenericHeader.swift */; };
+		AEB3546729900EB100252427 /* GenericHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEB3546629900EB100252427 /* GenericHeader.xib */; };
 		AEB497EA2985D53E000FFD8A /* Presentation.docc in Sources */ = {isa = PBXBuildFile; fileRef = AEB497E92985D53E000FFD8A /* Presentation.docc */; };
 		AEB497F02985D53E000FFD8A /* Presentation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEB497E52985D53E000FFD8A /* Presentation.framework */; };
 		AEB497F52985D53E000FFD8A /* PresentationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB497F42985D53E000FFD8A /* PresentationTests.swift */; };
@@ -109,6 +111,8 @@
 		AE76453129869C150027148F /* Mulish-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mulish-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
 		AE7645662986D0870027148F /* BaseNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigation.swift; sourceTree = "<group>"; };
 		AE76456B2986D2460027148F /* BaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
+		AEB35464299008A400252427 /* GenericHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericHeader.swift; sourceTree = "<group>"; };
+		AEB3546629900EB100252427 /* GenericHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GenericHeader.xib; sourceTree = "<group>"; };
 		AEB497E52985D53E000FFD8A /* Presentation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Presentation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEB497E82985D53E000FFD8A /* Presentation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Presentation.h; sourceTree = "<group>"; };
 		AEB497E92985D53E000FFD8A /* Presentation.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = Presentation.docc; sourceTree = "<group>"; };
@@ -235,6 +239,15 @@
 				AE76456B2986D2460027148F /* BaseVC.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		AEB3545F2990086600252427 /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				AEB35464299008A400252427 /* GenericHeader.swift */,
+				AEB3546629900EB100252427 /* GenericHeader.xib */,
+			);
+			path = Headers;
 			sourceTree = "<group>";
 		};
 		AEB497DB2985D53E000FFD8A = {
@@ -368,6 +381,7 @@
 		AEB498312985E9F9000FFD8A /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				AEB3545F2990086600252427 /* Headers */,
 				AE66053F298ADDA1006AF6C3 /* Loaders */,
 				AEB498342985EA48000FFD8A /* FeedbackMessage */,
 			);
@@ -546,6 +560,7 @@
 				AE76453B2986A3090027148F /* Mulish-ExtraBoldItalic.ttf in Resources */,
 				AEB498372985EA6F000FFD8A /* FeedbackMessageView.xib in Resources */,
 				AE7645432986A3090027148F /* Mulish-ExtraBold.ttf in Resources */,
+				AEB3546729900EB100252427 /* GenericHeader.xib in Resources */,
 				AE7645412986A3090027148F /* Mulish-Italic.ttf in Resources */,
 				AE66053E298ADD7A006AF6C3 /* loading.json in Resources */,
 				AE7645402986A3090027148F /* Mulish-ExtraLightItalic.ttf in Resources */,
@@ -607,6 +622,7 @@
 				AEB498292985E56E000FFD8A /* CoordinatorKeys.swift in Sources */,
 				AEB498412985EDA4000FFD8A /* UIColor_Ext.swift in Sources */,
 				AE76456C2986D2460027148F /* BaseVC.swift in Sources */,
+				AEB35465299008A400252427 /* GenericHeader.swift in Sources */,
 				AEB497EA2985D53E000FFD8A /* Presentation.docc in Sources */,
 				AE223F08298E6472006DA84C /* LanguageManager.swift in Sources */,
 				AEB4983F2985ECC0000FFD8A /* ColorPalette.swift in Sources */,

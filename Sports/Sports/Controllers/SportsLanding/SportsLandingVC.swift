@@ -18,7 +18,7 @@ class SportsLandingVC: BaseVC {
     
     // MARK: - Outlets
     
-    @IBOutlet weak var genericHeader: UIView!
+    @IBOutlet weak var genericHeader: GenericHeader!
     @IBOutlet weak var sportsTV: UITableView!
     
     init(viewModel: SportsLandingViewModel) {
@@ -35,9 +35,7 @@ class SportsLandingVC: BaseVC {
     
     override func setupView() {
         super.setupView()
-        
-        genericHeader.backgroundColor = ColorPalette.RegularBlue.value
-        
+        setUpHeader()
         setUpTableView()
     }
     
@@ -71,6 +69,15 @@ class SportsLandingVC: BaseVC {
             .distinctUntilChanged()
             .bind(to: sportsTV.rx.items(dataSource: sportsDataSource))
             .disposed(by: rx.disposeBag)
+    }
+    
+    private func setUpHeader() {
+        genericHeader.setUpViwe(configurations: GenericHeaderConfigurations
+            .Builder(appLogo: "AppLogo")
+            .setUpBGColor(backgroundColor: ColorPalette.RegularBlue)
+            .applyTopSafeAreaPadding(shouldApply: true)
+            .build()
+        )
     }
     
     private func setUpTableView() {
