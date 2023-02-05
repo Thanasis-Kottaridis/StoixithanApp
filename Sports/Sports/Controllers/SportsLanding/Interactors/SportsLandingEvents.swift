@@ -14,6 +14,6 @@ enum SportsLandingEvents {
     // Set enum cases here
     case fetchData
     case refreshData
-    case collapseSport(sport: Sport)
+    case collapseSport(sport: Sport, isExpand: Bool)
     case selectFavoriteEvent(eventId: String)
 }

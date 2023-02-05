@@ -10,7 +10,7 @@ import Domain
 import Presentation
 
 protocol SportsTableViewHeaderDelegate: AnyObject {
-    func didChangeExpandState(sport: Sport)
+    func didChangeExpandState(sport: Sport, isExpand: Bool)
 }
 
 class SportsTableViewHeader: UITableViewHeaderFooterView {
@@ -33,6 +33,10 @@ class SportsTableViewHeader: UITableViewHeaderFooterView {
     
     override func prepareForReuse() {
         super.prepareForReuse()
+        isExpand = true
+        sportImg.isHidden = true
+        sportDescLbl.text = ""
+        rightArrowImg.image = UIImage(named: "arrow-down")
     }
     
     func setUpView(
@@ -54,14 +58,21 @@ class SportsTableViewHeader: UITableViewHeaderFooterView {
         ))
         sportImg.isHidden = sport.sportIcon == nil
         sportImg.image = sport.sportIcon
-        rightArrowImg.image = UIImage(named: isExpand ? "arrow-down" : "arrow-up")
+        setUpArrowImg()
         
         rightArrowImg.addTapGestureRecognizer { [weak self] in
             guard let self = self,
                   let sport = self.sport
             else { return }
-            self.delegate?.didChangeExpandState(sport: sport)
+            self.isExpand.toggle()
+            self.setUpArrowImg()
+            self.delegate?.didChangeExpandState(sport: sport, isExpand: self.isExpand)
         }
+    }
+    
+    private func setUpArrowImg() {
+        rightArrowImg.image = UIImage(named: isExpand ? "arrow-down" : "arrow-up")
+
     }
 }
 

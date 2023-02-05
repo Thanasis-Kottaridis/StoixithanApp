@@ -103,7 +103,7 @@ extension SportsLandingVC: UITableViewDelegate {
         guard let sport = viewModel.state.value.spotrsList[safe: section],
               let sportId = sport.id
         else { return nil }
-        let isExpanded = viewModel.state.value.collapsedSports.contains(key: sportId)
+        let isExpanded = !viewModel.state.value.collapsedSports.contains(key: sportId)
         
         guard let view = tableView.dequeueReusableHeaderFooterView(
             withIdentifier: SportsTableViewHeader.kCONTENT_XIB_NAME
@@ -121,7 +121,7 @@ extension SportsLandingVC: UITableViewDelegate {
 
 // MARK: - Sport Header Delegate
 extension SportsLandingVC: SportsTableViewHeaderDelegate {
-    func didChangeExpandState(sport: Domain.Sport) {
-        viewModel.onTriggeredEvent(event: .collapseSport(sport: sport))
+    func didChangeExpandState(sport: Domain.Sport, isExpand: Bool) {
+        viewModel.onTriggeredEvent(event: .collapseSport(sport: sport, isExpand: isExpand))
     }
 }

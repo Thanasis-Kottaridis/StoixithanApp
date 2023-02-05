@@ -47,8 +47,8 @@ class SportsLandingViewModel: BaseViewModel {
             getSportsWithEvents(forceUpdate: true)
         case .selectFavoriteEvent(let eventId):
             selectFavoriteEvent(eventId: eventId)
-        case .collapseSport(sport: let sport):
-            break
+        case .collapseSport(let sport, let isExpand):
+            changeExpandCollapseState(sport: sport, isExpand: isExpand)
         }
     }
     
@@ -78,4 +78,22 @@ class SportsLandingViewModel: BaseViewModel {
     private func selectFavoriteEvent(eventId: String) {
         
     }
+    
+    private func changeExpandCollapseState(sport: Sport, isExpand: Bool) {
+        var mCollapsedSports = state.value.collapsedSports
+        
+        guard let id = sport.id
+        else { return }
+        
+        // 1. update collapsed sports
+        if !mCollapsedSports.contains(key: id) {
+            mCollapsedSports[id] = sport
+        } else {
+            mCollapsedSports.removeValue(forKey: id)
+        }
+        
+        // 2. update state
+        state.accept(state.value.copy(collapsedSports: mCollapsedSports))
+    }
+    
 }
