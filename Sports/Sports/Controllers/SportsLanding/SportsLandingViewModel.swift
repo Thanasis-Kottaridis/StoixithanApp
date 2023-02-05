@@ -47,6 +47,8 @@ class SportsLandingViewModel: BaseViewModel {
             getSportsWithEvents(forceUpdate: true)
         case .selectFavoriteEvent(let eventId):
             selectFavoriteEvent(eventId: eventId)
+        case .collapseSport(sport: let sport):
+            break
         }
     }
     
@@ -62,7 +64,10 @@ class SportsLandingViewModel: BaseViewModel {
             switch result {
             case .Success(let response):
                 self.state.accept(
-                    self.state.value.copy(spotrsList: response)
+                    self.state.value.copy(
+                        spotrsList: response, // update sports list.
+                        collapsedSports: [:] // reset collapsed cells
+                    )
                 )
             case .Failure(let error):
                 self.handleErrors(error: error)

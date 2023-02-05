@@ -23,6 +23,8 @@
 		AE224049298EAF87006DA84C /* EventCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE224047298EAF86006DA84C /* EventCollectionViewCell.xib */; };
 		AE963C2A298ECCC20030AC05 /* SportsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE963C28298ECCC20030AC05 /* SportsTableViewCell.swift */; };
 		AE963C2B298ECCC20030AC05 /* SportsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE963C29298ECCC20030AC05 /* SportsTableViewCell.xib */; };
+		AE963C4A298FB19C0030AC05 /* SportsTableViewHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE963C49298FB19C0030AC05 /* SportsTableViewHeader.xib */; };
+		AEB3544E298FBD9C00252427 /* SportsTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB3544D298FBD9C00252427 /* SportsTableViewHeader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +71,8 @@
 		AE224047298EAF86006DA84C /* EventCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventCollectionViewCell.xib; sourceTree = "<group>"; };
 		AE963C28298ECCC20030AC05 /* SportsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsTableViewCell.swift; sourceTree = "<group>"; };
 		AE963C29298ECCC20030AC05 /* SportsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SportsTableViewCell.xib; sourceTree = "<group>"; };
+		AE963C49298FB19C0030AC05 /* SportsTableViewHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SportsTableViewHeader.xib; sourceTree = "<group>"; };
+		AEB3544D298FBD9C00252427 /* SportsTableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsTableViewHeader.swift; sourceTree = "<group>"; };
 		D1FE2F5BE5084658FE2A332A /* Pods-Sports.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sports.debug.xcconfig"; path = "Target Support Files/Pods-Sports/Pods-Sports.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -199,12 +203,30 @@
 		AE224043298EAADF006DA84C /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				AE224046298EAF86006DA84C /* EventCollectionViewCell.swift */,
-				AE224047298EAF86006DA84C /* EventCollectionViewCell.xib */,
-				AE963C28298ECCC20030AC05 /* SportsTableViewCell.swift */,
-				AE963C29298ECCC20030AC05 /* SportsTableViewCell.xib */,
+				AE963C3D298FA9370030AC05 /* CollectionViewCells */,
+				AE963C3C298FA92C0030AC05 /* TableViewCells */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		AE963C3C298FA92C0030AC05 /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				AE963C28298ECCC20030AC05 /* SportsTableViewCell.swift */,
+				AE963C29298ECCC20030AC05 /* SportsTableViewCell.xib */,
+				AE963C49298FB19C0030AC05 /* SportsTableViewHeader.xib */,
+				AEB3544D298FBD9C00252427 /* SportsTableViewHeader.swift */,
+			);
+			path = TableViewCells;
+			sourceTree = "<group>";
+		};
+		AE963C3D298FA9370030AC05 /* CollectionViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				AE224046298EAF86006DA84C /* EventCollectionViewCell.swift */,
+				AE224047298EAF86006DA84C /* EventCollectionViewCell.xib */,
+			);
+			path = CollectionViewCells;
 			sourceTree = "<group>";
 		};
 		BEEA0B00564021D93EFA06FE /* Pods */ = {
@@ -334,6 +356,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE22401B298E8833006DA84C /* SportsLandingVC.xib in Resources */,
+				AE963C4A298FB19C0030AC05 /* SportsTableViewHeader.xib in Resources */,
 				AE963C2B298ECCC20030AC05 /* SportsTableViewCell.xib in Resources */,
 				AE224049298EAF87006DA84C /* EventCollectionViewCell.xib in Resources */,
 			);
@@ -382,6 +405,7 @@
 				AE224048298EAF86006DA84C /* EventCollectionViewCell.swift in Sources */,
 				AE963C2A298ECCC20030AC05 /* SportsTableViewCell.swift in Sources */,
 				AE223FDF298E8663006DA84C /* Sports.docc in Sources */,
+				AEB3544E298FBD9C00252427 /* SportsTableViewHeader.swift in Sources */,
 				AE22401F298E8967006DA84C /* SportsLandingEvents.swift in Sources */,
 				AE22401A298E8833006DA84C /* SportsLandingVC.swift in Sources */,
 				AE224021298E8967006DA84C /* SportsLandingState.swift in Sources */,

@@ -1,46 +1,48 @@
 //
-//  SportsTableViewCell.swift
+//  SportsTableViewHeader.swift
 //  Sports
 //
-//  Created by thanos kottaridis on 4/2/23.
+//  Created by thanos kottaridis on 5/2/23.
 //
 
 import UIKit
 import Domain
 import Presentation
-import RxSwift
-import RxCocoa
-import RxDataSources
 
-class SportsTableViewCell: UITableViewCell {
-    
+protocol SportsTableViewHeaderDelegate: AnyObject {
+    func didChangeExpandState(sport: Sport)
+}
+
+class SportsTableViewHeader: UITableViewHeaderFooterView {
+
     // MARK: - Outlets
     @IBOutlet weak var sportHeaderContainer: UIView!
     @IBOutlet weak var sportImg: UIImageView!
     @IBOutlet weak var sportDescLbl: UILabel!
     @IBOutlet weak var rightArrowImg: UIImageView!
-    @IBOutlet weak var eventsCollectionView: UICollectionView!
-    
+
     // MARK: - Vars
-    static let kCONTENT_XIB_NAME = "SportsTableViewCell"
+    static let kCONTENT_XIB_NAME = "SportsTableViewHeader"
+    private weak var delegate: SportsTableViewHeaderDelegate?
+    private var isExpand: Bool = true
     private var sport: Sport?
-    private var isExpanded: Bool = true
-    private var sportObserver = PublishSubject<Sport>()
     
     override func awakeFromNib() {
-        setUpCollectionView()
+        super.awakeFromNib()
     }
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        isExpanded = true
-        sportImg.isHidden = true
-        sportDescLbl.text = ""
-        rightArrowImg.image = UIImage(named: "arrow-up")
     }
     
-    func setUpView(sport: Sport) {
-        sportObserver.onNext(sport)
+    func setUpView(
+        sport: Sport,
+        isExpand: Bool,
+        delegate: SportsTableViewHeaderDelegate
+    ) {
+        self.sport = sport
+        self.isExpand = isExpand
+        self.delegate = delegate
         setUpHeaderView(sport: sport)
     }
     
@@ -52,27 +54,14 @@ class SportsTableViewCell: UITableViewCell {
         ))
         sportImg.isHidden = sport.sportIcon == nil
         sportImg.image = sport.sportIcon
-        rightArrowImg.image = UIImage(named: isExpanded ? "arrow-up" : "arrow-down")
-    }
-    
-    private func setUpCollectionView() {
-        eventsCollectionView.register(
-            UINib(
-                nibName: EventCollectionViewCell.kCONTENT_XIB_NAME,
-                bundle: Bundle(for: EventCollectionViewCell.self)
-            ),
-            forCellWithReuseIdentifier: EventCollectionViewCell.kCONTENT_XIB_NAME
-        )
- 
-        sportObserver.observe(on: MainScheduler.instance)
-            .map{ $0.events ?? [] }
-            .distinctUntilChanged()
-            .bind(to: eventsCollectionView.rx.items(
-                cellIdentifier: EventCollectionViewCell.kCONTENT_XIB_NAME,
-                cellType: EventCollectionViewCell.self
-            )) { indexPath, item, cell in
-                cell.setUpCell(event: item)
-            }.disposed(by: rx.disposeBag)
+        rightArrowImg.image = UIImage(named: isExpand ? "arrow-down" : "arrow-up")
+        
+        rightArrowImg.addTapGestureRecognizer { [weak self] in
+            guard let self = self,
+                  let sport = self.sport
+            else { return }
+            self.delegate?.didChangeExpandState(sport: sport)
+        }
     }
 }
 

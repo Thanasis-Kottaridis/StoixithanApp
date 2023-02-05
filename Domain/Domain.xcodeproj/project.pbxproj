@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		18EB81EFB4290F0F26C21D9A /* Pods_Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 602B599912673EB1A859DA5E /* Pods_Domain.framework */; };
 		AE22404D298EC55D006DA84C /* Collection_Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE22404C298EC55D006DA84C /* Collection_Ext.swift */; };
+		AE963C4C298FB5CE0030AC05 /* Dictionary_Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE963C4B298FB5CE0030AC05 /* Dictionary_Ext.swift */; };
 		AEB4978F29857BF9000FFD8A /* Domain.docc in Sources */ = {isa = PBXBuildFile; fileRef = AEB4978E29857BF9000FFD8A /* Domain.docc */; };
 		AEB4979529857BF9000FFD8A /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEB4978A29857BF9000FFD8A /* Domain.framework */; };
 		AEB4979A29857BF9000FFD8A /* DomainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB4979929857BF9000FFD8A /* DomainTests.swift */; };
@@ -37,6 +38,7 @@
 		54C1E1A080C6F08E2A2F2EF8 /* Pods-Domain.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Domain.debug.xcconfig"; path = "Target Support Files/Pods-Domain/Pods-Domain.debug.xcconfig"; sourceTree = "<group>"; };
 		602B599912673EB1A859DA5E /* Pods_Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE22404C298EC55D006DA84C /* Collection_Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collection_Ext.swift; sourceTree = "<group>"; };
+		AE963C4B298FB5CE0030AC05 /* Dictionary_Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dictionary_Ext.swift; sourceTree = "<group>"; };
 		AEB4978A29857BF9000FFD8A /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEB4978D29857BF9000FFD8A /* Domain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Domain.h; sourceTree = "<group>"; };
 		AEB4978E29857BF9000FFD8A /* Domain.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = Domain.docc; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				AE22404C298EC55D006DA84C /* Collection_Ext.swift */,
+				AE963C4B298FB5CE0030AC05 /* Dictionary_Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -326,6 +329,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AEF958AC298AEF7C007E565C /* BaseException.swift in Sources */,
+				AE963C4C298FB5CE0030AC05 /* Dictionary_Ext.swift in Sources */,
 				AEF958AE298AF0FC007E565C /* Result.swift in Sources */,
 				AEB4978F29857BF9000FFD8A /* Domain.docc in Sources */,
 				AEB4983C2985EAAF000FFD8A /* FeedbackMessage.swift in Sources */,

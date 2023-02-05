@@ -61,7 +61,7 @@ class SportsLandingVC: BaseVC {
         
         viewModel.stateObserver
             .map { newState -> [SectionModel<String, Sport>] in
-                return [SectionModel(model: "section_const", items: newState.spotrsList)]
+                return newState.sportsListDisplayable
             }
             .distinctUntilChanged()
             .bind(to: sportsTV.rx.items(dataSource: sportsDataSource))
@@ -70,9 +70,24 @@ class SportsLandingVC: BaseVC {
     
     private func setUpTableView() {
         sportsTV.separatorStyle = .none
+        if #available(iOS 15.0, *) {
+            sportsTV.sectionHeaderTopPadding = 0
+        } else {
+            // Fallback on earlier versions
+        }
         sportsTV.rx.setDelegate(self)
             .disposed(by: rx.disposeBag)
         
+        // register header
+        sportsTV.register(
+            UINib(
+                nibName: SportsTableViewHeader.kCONTENT_XIB_NAME,
+                bundle: Bundle(for: SportsTableViewHeader.self)
+            ),
+            forHeaderFooterViewReuseIdentifier: SportsTableViewHeader.kCONTENT_XIB_NAME
+        )
+        
+        // register cell
         sportsTV.register(
             UINib(
                 nibName: SportsTableViewCell.kCONTENT_XIB_NAME,
@@ -82,6 +97,31 @@ class SportsLandingVC: BaseVC {
     }
 }
 
+// MARK: - TableView Delegate
 extension SportsLandingVC: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        guard let sport = viewModel.state.value.spotrsList[safe: section],
+              let sportId = sport.id
+        else { return nil }
+        let isExpanded = viewModel.state.value.collapsedSports.contains(key: sportId)
+        
+        guard let view = tableView.dequeueReusableHeaderFooterView(
+            withIdentifier: SportsTableViewHeader.kCONTENT_XIB_NAME
+        ) as? SportsTableViewHeader
+        else { return nil }
+        
+        view.setUpView(sport: sport, isExpand: isExpanded, delegate: self)
+        return view
+    }
     
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return CGFloat(48).adaptedCGFloat()
+    }
+}
+
+// MARK: - Sport Header Delegate
+extension SportsLandingVC: SportsTableViewHeaderDelegate {
+    func didChangeExpandState(sport: Domain.Sport) {
+        viewModel.onTriggeredEvent(event: .collapseSport(sport: sport))
+    }
 }

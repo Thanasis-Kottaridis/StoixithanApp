@@ -8,10 +8,12 @@
 //
 
 import Foundation
+import Domain
 
 enum SportsLandingEvents {
     // Set enum cases here
     case fetchData
     case refreshData
+    case collapseSport(sport: Sport)
     case selectFavoriteEvent(eventId: String)
 }
