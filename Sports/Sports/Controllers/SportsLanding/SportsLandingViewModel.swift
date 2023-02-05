@@ -45,8 +45,8 @@ class SportsLandingViewModel: BaseViewModel {
             getSportsWithEvents(forceUpdate: false)
         case .refreshData:
             getSportsWithEvents(forceUpdate: true)
-        case .selectFavoriteEvent(let eventId):
-            selectFavoriteEvent(eventId: eventId)
+        case .selectFavoriteEvent(let eventId, let isFavorite):
+            selectFavoriteEvent(eventId: eventId, isFavorite: isFavorite)
         case .collapseSport(let sport, let isExpand):
             changeExpandCollapseState(sport: sport, isExpand: isExpand)
         }
@@ -75,8 +75,11 @@ class SportsLandingViewModel: BaseViewModel {
         }
     }
     
-    private func selectFavoriteEvent(eventId: String) {
-        
+    private func selectFavoriteEvent(eventId: String, isFavorite: Bool) {
+        // 1. update event to local storage via repository
+        sportsRepository.updateFavoriteEvent(byId: eventId, isFavorite: isFavorite)
+        // 2. get updated snapshot of local data
+        getSportsWithEvents(forceUpdate: false)
     }
     
     private func changeExpandCollapseState(sport: Sport, isExpand: Bool) {

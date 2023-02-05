@@ -17,7 +17,8 @@ class SportsTableViewCell: UITableViewCell {
     // MARK: - Vars
     static let kCONTENT_XIB_NAME = "SportsTableViewCell"
     private var sportObserver = PublishSubject<Sport>()
-    
+    private var callback: ChangeFavoriteStateCallback?
+
     // MARK: - Outlets
     @IBOutlet weak var eventsCollectionView: UICollectionView!
     
@@ -29,7 +30,8 @@ class SportsTableViewCell: UITableViewCell {
         super.prepareForReuse()
     }
     
-    func setUpView(sport: Sport) {
+    func setUpView(sport: Sport, callback: @escaping ChangeFavoriteStateCallback) {
+        self.callback = callback
         sportObserver.onNext(sport)
     }
     
@@ -43,13 +45,13 @@ class SportsTableViewCell: UITableViewCell {
         )
  
         sportObserver.observe(on: MainScheduler.instance)
-            .map{ $0.events ?? [] }
+            .map{ $0.sortedEvents }
             .distinctUntilChanged()
             .bind(to: eventsCollectionView.rx.items(
                 cellIdentifier: EventCollectionViewCell.kCONTENT_XIB_NAME,
                 cellType: EventCollectionViewCell.self
-            )) { indexPath, item, cell in
-                cell.setUpCell(event: item)
+            )) {[weak self] indexPath, item, cell in
+                cell.setUpCell(event: item, callback: self?.callback)
             }.disposed(by: rx.disposeBag)
     }
 }
@@ -81,5 +83,19 @@ fileprivate extension Sport {
         default:
             return nil
         }
+    }
+    
+    var sortedEvents: [Domain.Event] {
+//        return self.events?.sorted { (object1, object2) -> Bool in
+//            return (object1.timestamp ?? 0) > (object2.timestamp ?? 0)
+//        } ?? []
+        
+        return self.events?.sorted { (object1, object2) -> Bool in
+            if object1.isFavorite != object2.isFavorite {
+                return object1.isFavorite && !object2.isFavorite
+            } else {
+                return (object1.timestamp ?? Int.min) > (object2.timestamp ?? Int.min)
+            }
+        } ?? []
     }
 }

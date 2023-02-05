@@ -21,6 +21,29 @@ public class SportsRepositoryImpl: SportsRepository {
         _ forceUpdate: Bool,
         completion: @escaping (Domain.Result<[Domain.Sport]?, Domain.BaseException>) -> Void
     ) {
+        /*
+            If no force update requires
+            and sports exist in local storage.
+            fetch local spors and fire completion.
+         */
+        if !forceUpdate {
+            let sports = SportEntityMapper().mapDomainLists(modelList: sportDao.getAllSports())
+            if !sports.isEmpty {
+                print("💽 💾 💿 Spots fets drom local storage 💽 💾 💿 ")
+                completion(Result.Success(sports))
+                return
+            }
+        }
+        
+        /*
+            Else fetch remote spors and fire completion.
+         */
+        getRemoteSpotsWithEvents(completion: completion)
+    }
+    
+    private func getRemoteSpotsWithEvents(
+        completion: @escaping (Domain.Result<[Domain.Sport]?, Domain.BaseException>) -> Void
+    ) {
         sessionManager.request(SportsApi.sportsApi)
             .validateResponseWrapper(
                 fromType: [SportDto].self,

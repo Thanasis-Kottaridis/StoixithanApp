@@ -87,7 +87,7 @@ extension Date {
     
     private func getDisplayableString(value: Int, type: String) -> String {
         if value > 0 {
-            return "\(abs(value)) \(type) before" 
+            return "\(abs(value)) \(type) left" 
         } else {
             return "\(abs(value)) \(type) before"
         }

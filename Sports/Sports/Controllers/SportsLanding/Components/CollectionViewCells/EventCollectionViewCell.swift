@@ -9,6 +9,8 @@ import UIKit
 import Domain
 import Presentation
 
+typealias ChangeFavoriteStateCallback = (String, Bool) -> Void
+
 class EventCollectionViewCell: UICollectionViewCell {
     
     // MARK: - Outlets
@@ -21,6 +23,7 @@ class EventCollectionViewCell: UICollectionViewCell {
     // MARK: - Vars
     static let kCONTENT_XIB_NAME = "EventCollectionViewCell"
     private var event: Event?
+    private var callback: ChangeFavoriteStateCallback?
 
     override func prepareForReuse() {
         super.prepareForReuse()
@@ -30,8 +33,9 @@ class EventCollectionViewCell: UICollectionViewCell {
         isFavoriteImg.image = UIImage(named: "favorite-outline")
     }
     
-    func setUpCell(event: Event) {
+    func setUpCell(event: Event, callback: ChangeFavoriteStateCallback?) {
         self.event = event
+        self.callback = callback
         // set up participant lbl
         participant1Lbl.attributedText = event.eventParticipants[safe: 0]?
             .with(.style_16_20(weight: .REGULAR, color: .RegularBlue))
@@ -40,6 +44,13 @@ class EventCollectionViewCell: UICollectionViewCell {
         
         // set up isFavorite Icon
         isFavoriteImg.image = event.isFavoriteUIImage
+        isFavoriteImg.addTapGestureRecognizer { [weak self] in
+            guard let self = self,
+                  let event = self.event,
+                  let id = event.id
+            else { return }
+            self.callback?(id, !event.isFavorite)
+        }
         
         setUpCountDownView(event: event)
     }

@@ -13,7 +13,7 @@ import RxCocoa
 import RxDataSources
 
 class SportsLandingVC: BaseVC {
-
+    
     private let viewModel: SportsLandingViewModel
     
     // MARK: - Outlets
@@ -55,7 +55,12 @@ class SportsLandingVC: BaseVC {
                 fatalError("Cant dequeueReusableCell")
             }
             cell.selectionStyle = .none
-            cell.setUpView(sport: element)
+            cell.setUpView(sport: element) { [weak self] eventId, isFavorite in
+                self?.viewModel.onTriggeredEvent(event: .selectFavoriteEvent(
+                    eventId: eventId,
+                    isFavorite: isFavorite
+                ))
+            }
             return cell
         }
         
@@ -91,7 +96,7 @@ class SportsLandingVC: BaseVC {
         sportsTV.register(
             UINib(
                 nibName: SportsTableViewCell.kCONTENT_XIB_NAME,
-                  bundle: Bundle(for: SportsTableViewCell.self)
+                bundle: Bundle(for: SportsTableViewCell.self)
             ), forCellReuseIdentifier: SportsTableViewCell.kCONTENT_XIB_NAME
         )
     }
