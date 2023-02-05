@@ -10,6 +10,7 @@
 		18EB81EFB4290F0F26C21D9A /* Pods_Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 602B599912673EB1A859DA5E /* Pods_Domain.framework */; };
 		AE22404D298EC55D006DA84C /* Collection_Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE22404C298EC55D006DA84C /* Collection_Ext.swift */; };
 		AE963C4C298FB5CE0030AC05 /* Dictionary_Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE963C4B298FB5CE0030AC05 /* Dictionary_Ext.swift */; };
+		AEB3545E298FD0C800252427 /* Date_Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB3545D298FD0C800252427 /* Date_Ext.swift */; };
 		AEB4978F29857BF9000FFD8A /* Domain.docc in Sources */ = {isa = PBXBuildFile; fileRef = AEB4978E29857BF9000FFD8A /* Domain.docc */; };
 		AEB4979529857BF9000FFD8A /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEB4978A29857BF9000FFD8A /* Domain.framework */; };
 		AEB4979A29857BF9000FFD8A /* DomainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB4979929857BF9000FFD8A /* DomainTests.swift */; };
@@ -39,6 +40,7 @@
 		602B599912673EB1A859DA5E /* Pods_Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE22404C298EC55D006DA84C /* Collection_Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collection_Ext.swift; sourceTree = "<group>"; };
 		AE963C4B298FB5CE0030AC05 /* Dictionary_Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dictionary_Ext.swift; sourceTree = "<group>"; };
+		AEB3545D298FD0C800252427 /* Date_Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date_Ext.swift; sourceTree = "<group>"; };
 		AEB4978A29857BF9000FFD8A /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEB4978D29857BF9000FFD8A /* Domain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Domain.h; sourceTree = "<group>"; };
 		AEB4978E29857BF9000FFD8A /* Domain.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = Domain.docc; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 			children = (
 				AE22404C298EC55D006DA84C /* Collection_Ext.swift */,
 				AE963C4B298FB5CE0030AC05 /* Dictionary_Ext.swift */,
+				AEB3545D298FD0C800252427 /* Date_Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -336,6 +339,7 @@
 				AECC846E298C7D0D00F0FA93 /* SportsRepository.swift in Sources */,
 				AECC8464298C6CA400F0FA93 /* Sport.swift in Sources */,
 				AECC8466298C6D4500F0FA93 /* Event.swift in Sources */,
+				AEB3545E298FD0C800252427 /* Date_Ext.swift in Sources */,
 				AEB497B429857EB9000FFD8A /* CustomInject.swift in Sources */,
 				AE22404D298EC55D006DA84C /* Collection_Ext.swift in Sources */,
 			);
