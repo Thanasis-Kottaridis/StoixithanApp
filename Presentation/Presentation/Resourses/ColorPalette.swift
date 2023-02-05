@@ -15,6 +15,7 @@ public indirect enum ColorPalette {
     case White
     case DarkGray
     case Gray
+    case LightGray
     case Green
     case Red
     case CustomAlpha(color: ColorPalette ,alpha: Double)
@@ -30,19 +31,21 @@ public extension ColorPalette {
         
         switch self {
         case .DarkBlue:
-            instanceColor = UIColor(hexString:"#003162")
+            instanceColor = UIColor(hexString:"#10151F")
         case .RegularBlue:
-            instanceColor = UIColor(hexString: "#0066CC")
+            instanceColor = UIColor(hexString: "#0163C5")
         case .LightBlue:
-            instanceColor = UIColor(hexString: "#00AEEF")
+            instanceColor = UIColor(hexString: "#1B86EE")
         case .Black:
             instanceColor = UIColor(hexString: "#212529")
         case .White:
-            instanceColor = UIColor(hexString: "#F2F2F2")
+            instanceColor = UIColor(hexString: "#FFFFFF")
+        case .LightGray:
+            instanceColor = UIColor(hexString: "#ECEDEF")
         case .Gray:
-            instanceColor = UIColor(hexString: "#F4F4F4")
+            instanceColor = UIColor(hexString: "#68768A")
         case .DarkGray:
-            instanceColor = UIColor(hexString: "#2C2C2E")
+            instanceColor = UIColor(hexString: "#1B1F27")
         case .Green:
             instanceColor = UIColor(hexString: "#80C479")
         case .Red:

@@ -51,10 +51,10 @@ class SportsTableViewHeader: UITableViewHeaderFooterView {
     }
     
     private func setUpHeaderView(sport: Sport) {
-        sportHeaderContainer.backgroundColor = ColorPalette.DarkBlue.value
+        sportHeaderContainer.backgroundColor = ColorPalette.LightGray.value
         sportDescLbl.attributedText = sport.description?.with(.style_16_20(
             weight: .BLACK,
-            color: .White
+            color: .DarkGray
         ))
         sportImg.isHidden = sport.sportIcon == nil
         sportImg.image = sport.sportIcon

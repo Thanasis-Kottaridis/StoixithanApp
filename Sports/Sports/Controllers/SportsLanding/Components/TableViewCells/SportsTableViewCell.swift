@@ -33,9 +33,12 @@ class SportsTableViewCell: UITableViewCell {
     func setUpView(sport: Sport, callback: @escaping ChangeFavoriteStateCallback) {
         self.callback = callback
         sportObserver.onNext(sport)
+        contentView.backgroundColor = ColorPalette.LightGray.value
     }
     
     private func setUpCollectionView() {
+        eventsCollectionView.layer.cornerRadius = CGFloat(12).adaptedCGFloat()
+        eventsCollectionView.clipsToBounds = true
         eventsCollectionView.register(
             UINib(
                 nibName: EventCollectionViewCell.kCONTENT_XIB_NAME,

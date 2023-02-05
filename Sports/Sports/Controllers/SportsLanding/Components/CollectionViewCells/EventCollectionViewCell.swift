@@ -38,9 +38,9 @@ class EventCollectionViewCell: UICollectionViewCell {
         self.callback = callback
         // set up participant lbl
         participant1Lbl.attributedText = event.eventParticipants[safe: 0]?
-            .with(.style_16_20(weight: .REGULAR, color: .RegularBlue))
+            .with(.style_16_20(weight: .REGULAR, color: .DarkGray))
         participant2Lbl.attributedText = event.eventParticipants[safe: 1]?
-            .with(.style_16_20(weight: .REGULAR, color: .RegularBlue))
+            .with(.style_16_20(weight: .REGULAR, color: .DarkGray))
         
         // set up isFavorite Icon
         isFavoriteImg.image = event.isFavoriteUIImage
@@ -57,11 +57,11 @@ class EventCollectionViewCell: UICollectionViewCell {
     
     private func setUpCountDownView(event: Event) {
         countDownContainer.layer.cornerRadius = CGFloat(8).adaptedCGFloat()
-        countDownContainer.layer.borderColor = ColorPalette.RegularBlue.value.cgColor
-        countDownContainer.layer.borderWidth = CGFloat(2).adaptedCGFloat()
+        countDownContainer.layer.borderColor = ColorPalette.DarkGray.value.cgColor
+        countDownContainer.layer.borderWidth = CGFloat(1.5).adaptedCGFloat()
         countDownContainer.clipsToBounds = true
         
-        countDownLbl.attributedText = event.getCountDown.with(.style_16_20(weight: .REGULAR, color: .RegularBlue))
+        countDownLbl.attributedText = event.getCountDown.with(.style_16_20(weight: .REGULAR, color: .DarkGray))
     }
 }
 

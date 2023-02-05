@@ -75,6 +75,8 @@ class SportsLandingVC: BaseVC {
     
     private func setUpTableView() {
         sportsTV.separatorStyle = .none
+        sportsTV.backgroundColor = ColorPalette.LightGray.value
+        
         if #available(iOS 15.0, *) {
             sportsTV.sectionHeaderTopPadding = 0
         } else {
