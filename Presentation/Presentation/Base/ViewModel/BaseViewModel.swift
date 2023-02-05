@@ -96,8 +96,10 @@ extension BaseViewModel {
     
     private func setUpLoadingObserver() {
         stateObserver.observe(on: MainScheduler.instance) /// observe on mainThread coz we update UI
-            .subscribe(onNext: { [weak self] state in
-                if state.isLoading {
+            .map{ $0.isLoading }
+            .distinctUntilChanged()
+            .subscribe(onNext: { [weak self] isLoading in
+                if isLoading {
                     self?.actionHandler?.handleAction(action: ShowLoaderAction())
                 } else {
                     self?.actionHandler?.handleAction(action: HideLoaderAction())

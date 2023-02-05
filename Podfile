@@ -3,6 +3,12 @@ platform :ios, '13.0'
 
 workspace 'StoixithanApp.xcworkspace'
 
+def unit_test_pods
+  # RxTest and RxBlocking make the most sense in the context of unit/integration tests
+  pod 'RxBlocking', '6.5.0'
+  pod 'RxTest', '6.5.0'
+end
+
 # ====================================
 #
 # DOMAIN PODS
@@ -74,6 +80,13 @@ target 'Sports' do
   project './Sports/Sports.project'
   use_frameworks!
   presentation_pods
+  
+  target 'SportsTests' do
+    inherit! :search_paths
+    # Pods for testing
+    presentation_pods
+    unit_test_pods
+  end
 end
 
 # ====================================
@@ -96,6 +109,7 @@ target 'StoixithanApp' do
   target 'StoixithanAppTests' do
     inherit! :search_paths
     # Pods for testing
+    unit_test_pods
   end
 
   target 'StoixithanAppUITests' do

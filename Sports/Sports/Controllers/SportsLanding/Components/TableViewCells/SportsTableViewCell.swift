@@ -57,6 +57,7 @@ class SportsTableViewCell: UITableViewCell {
     }
     
     private func setUpCollectionView() {
+        eventsCollectionView.backgroundColor = ColorPalette.White.value
         eventsCollectionView.layer.cornerRadius = CGFloat(12).adaptedCGFloat()
         eventsCollectionView.delegate = self
         eventsCollectionView.clipsToBounds = true

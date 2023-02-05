@@ -13,6 +13,8 @@ public class SportsRepositoryImpl: SportsRepository {
     
     @Injected(\.sportDao)
     private var sportDao: SportDao
+    @Injected(\.eventDao)
+    private var eventDao: EventDao
     private let sessionManager: Session = InjectedValues[\.networkProvider].manager
     
     public init() {}
@@ -73,6 +75,7 @@ public class SportsRepositoryImpl: SportsRepository {
 }
 
 // MARK: - Helper functions
+// TODO: - Remove this.
 extension SportsRepositoryImpl {
     public func getAllEvents() -> [Event] {
         let entities = EventDaoImpl().getAllEvents()

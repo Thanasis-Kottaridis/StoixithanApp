@@ -384,6 +384,7 @@
 				AEDBEB0329856CB5000448A9 /* Sources */,
 				AEDBEB0429856CB5000448A9 /* Frameworks */,
 				AEDBEB0529856CB5000448A9 /* Resources */,
+				C48D30A49981076DEF51E796 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -618,6 +619,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-StoixithanApp-StoixithanAppUITests/Pods-StoixithanApp-StoixithanAppUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C48D30A49981076DEF51E796 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-StoixithanAppTests/Pods-StoixithanAppTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-StoixithanAppTests/Pods-StoixithanAppTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-StoixithanAppTests/Pods-StoixithanAppTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E42486441AEB3458C5597A7C /* [CP] Check Pods Manifest.lock */ = {

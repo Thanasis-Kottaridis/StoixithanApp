@@ -12,6 +12,8 @@ PODS:
   - Realm/Headers (10.25.0)
   - RealmSwift (10.25.0):
     - Realm (= 10.25.0)
+  - RxBlocking (6.5.0):
+    - RxSwift (= 6.5.0)
   - RxCocoa (6.5.0):
     - RxRelay (= 6.5.0)
     - RxSwift (= 6.5.0)
@@ -22,6 +24,8 @@ PODS:
   - RxRelay (6.5.0):
     - RxSwift (= 6.5.0)
   - RxSwift (6.5.0)
+  - RxTest (6.5.0):
+    - RxSwift (= 6.5.0)
 
 DEPENDENCIES:
   - Alamofire (~> 5.4)
@@ -30,9 +34,11 @@ DEPENDENCIES:
   - BonMot
   - lottie-ios (= 3.3.0)
   - RealmSwift (= 10.25.0)
+  - RxBlocking (= 6.5.0)
   - RxCocoa (= 6.5.0)
   - RxDataSources (~> 5.0)
   - RxSwift (= 6.5.0)
+  - RxTest (= 6.5.0)
 
 SPEC REPOS:
   trunk:
@@ -44,10 +50,12 @@ SPEC REPOS:
     - lottie-ios
     - Realm
     - RealmSwift
+    - RxBlocking
     - RxCocoa
     - RxDataSources
     - RxRelay
     - RxSwift
+    - RxTest
 
 SPEC CHECKSUMS:
   Alamofire: f3b09a368f1582ab751b3fff5460276e0d2cf5c9
@@ -58,11 +66,13 @@ SPEC CHECKSUMS:
   lottie-ios: 6ac74dcc09904798f59b18cb3075c089d76be9ae
   Realm: 22a82aaa0e73f3483e3a6df32549c4c5cd34aa63
   RealmSwift: c2a635212400923edd3f828b8a37d55d3eb31863
+  RxBlocking: 04b5fd28bb5ea49f7d64b80db8bbfe50d9cc1c7d
   RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
   RxDataSources: aa47cc1ed6c500fa0dfecac5c979b723542d79cf
   RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
   RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
+  RxTest: eb2d23adefc5a5ebf5779c7792fa3edfe6ebcc17
 
-PODFILE CHECKSUM: 28dd37e2adee86ee74dd5a3a9736074cb144d6d5
+PODFILE CHECKSUM: 521aed3db14fbcd875ec30e1fbf282d0d5a0b3f5
 
 COCOAPODS: 1.11.2
