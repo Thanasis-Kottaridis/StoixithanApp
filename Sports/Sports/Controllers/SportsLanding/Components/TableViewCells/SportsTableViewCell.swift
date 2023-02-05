@@ -12,32 +12,53 @@ import RxSwift
 import RxCocoa
 import RxDataSources
 
+protocol SportsTableViewCellDelegate: AnyObject {
+    func didEventsCVOffsetChange(sportId: String, contentOffcet: CGPoint)
+    func getCVOffset(by sportId: String) -> CGPoint?
+}
+
 class SportsTableViewCell: UITableViewCell {
     
     // MARK: - Vars
     static let kCONTENT_XIB_NAME = "SportsTableViewCell"
+    private var sportId : String?
     private var sportObserver = PublishSubject<Sport>()
+    // TODO: - Remove this callback since we have delegate.
     private var callback: ChangeFavoriteStateCallback?
+    weak var delegate: SportsTableViewCellDelegate?
 
     // MARK: - Outlets
     @IBOutlet weak var eventsCollectionView: UICollectionView!
     
     override func awakeFromNib() {
+        contentView.backgroundColor = ColorPalette.LightGray.value
         setUpCollectionView()
     }
     
     override func prepareForReuse() {
         super.prepareForReuse()
+        sportId = nil
+        eventsCollectionView.contentOffset = CGPoint(x: 0, y: 0)
+        print("ContntOffset Debug: .... prepareForReuse called with offset \(eventsCollectionView.contentOffset)")
     }
     
-    func setUpView(sport: Sport, callback: @escaping ChangeFavoriteStateCallback) {
+    func setUpView(
+        sport: Sport,
+        callback: @escaping ChangeFavoriteStateCallback
+    ) {
         self.callback = callback
+        self.sportId = sport.id
+        
+        print("ContntOffset Debug: .... set up view called with \(sportId) and delegate \(delegate)")
+        // fix collection view offset.
+        fixCollectionViewOffset()
+    
         sportObserver.onNext(sport)
-        contentView.backgroundColor = ColorPalette.LightGray.value
     }
     
     private func setUpCollectionView() {
         eventsCollectionView.layer.cornerRadius = CGFloat(12).adaptedCGFloat()
+        eventsCollectionView.delegate = self
         eventsCollectionView.clipsToBounds = true
         eventsCollectionView.register(
             UINib(
@@ -56,6 +77,29 @@ class SportsTableViewCell: UITableViewCell {
             )) {[weak self] indexPath, item, cell in
                 cell.setUpCell(event: item, callback: self?.callback)
             }.disposed(by: rx.disposeBag)
+    }
+    
+    private func fixCollectionViewOffset() {
+        // updatem eventsCollectionView contentOffset
+        // if previous offset for collection view provided
+        if let sportId = sportId,
+           let cvOffset = delegate?.getCVOffset(by: sportId) {
+            print("ContntOffset Debug: .... fixCollectionViewOffset called with \(sportId) and offset \(cvOffset)")
+            eventsCollectionView.contentOffset = cvOffset
+        }
+    }
+}
+
+// MARK: - CollectionView Delegate
+extension SportsTableViewCell: UICollectionViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        guard let id = sportId
+        else { return }
+        
+        delegate?.didEventsCVOffsetChange(
+            sportId: id,
+            contentOffcet: eventsCollectionView.contentOffset
+        )
     }
 }
 

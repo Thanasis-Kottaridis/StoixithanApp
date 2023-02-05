@@ -14,12 +14,20 @@ import RxDataSources
 
 class SportsLandingVC: BaseVC {
     
-    private let viewModel: SportsLandingViewModel
-    
     // MARK: - Outlets
-    
     @IBOutlet weak var genericHeader: GenericHeader!
     @IBOutlet weak var sportsTV: UITableView!
+    @IBOutlet public weak var headerHeight: NSLayoutConstraint!
+    
+    // MARK: - Var
+    private let viewModel: SportsLandingViewModel
+    private var topSafeArea = UIApplication.shared.keyWindow?.safeAreaInsets.top ?? 0
+    /**
+        This helper var is used in order to keep events  Collection view Content offcet
+        to restore it after expand/collapse or prepeare for reuse
+        Its a dictionery in order to perform quick searchs based on **SportID
+     */
+    private var eventsCVOffcetKeeper: [String: CGPoint] = [:]
     
     init(viewModel: SportsLandingViewModel) {
         self.viewModel = viewModel
@@ -37,6 +45,7 @@ class SportsLandingVC: BaseVC {
         super.setupView()
         setUpHeader()
         setUpTableView()
+        configureRefreshControl()
     }
     
     override func populateData() {
@@ -53,6 +62,7 @@ class SportsLandingVC: BaseVC {
                 fatalError("Cant dequeueReusableCell")
             }
             cell.selectionStyle = .none
+            cell.delegate = self
             cell.setUpView(sport: element) { [weak self] eventId, isFavorite in
                 self?.viewModel.onTriggeredEvent(event: .selectFavoriteEvent(
                     eventId: eventId,
@@ -72,6 +82,7 @@ class SportsLandingVC: BaseVC {
     }
     
     private func setUpHeader() {
+        headerHeight.constant = CGFloat(116).adaptedCGFloat() + topSafeArea
         genericHeader.setUpViwe(configurations: GenericHeaderConfigurations
             .Builder(appLogo: "AppLogo")
             .setUpBGColor(backgroundColor: ColorPalette.RegularBlue)
@@ -86,8 +97,6 @@ class SportsLandingVC: BaseVC {
         
         if #available(iOS 15.0, *) {
             sportsTV.sectionHeaderTopPadding = 0
-        } else {
-            // Fallback on earlier versions
         }
         sportsTV.rx.setDelegate(self)
             .disposed(by: rx.disposeBag)
@@ -108,6 +117,26 @@ class SportsLandingVC: BaseVC {
                 bundle: Bundle(for: SportsTableViewCell.self)
             ), forCellReuseIdentifier: SportsTableViewCell.kCONTENT_XIB_NAME
         )
+    }
+    
+    // MARK: - RefreshControl SetUp
+    func configureRefreshControl() {
+        sportsTV.refreshControl = UIRefreshControl()
+        sportsTV.refreshControl?.addTarget(
+            self,
+            action: #selector(handleRefreshControl),
+            for: .valueChanged
+        )
+    }
+    
+    @objc func handleRefreshControl() {
+        // refresh sport data
+        viewModel.onTriggeredEvent(event: .refreshData)
+        // clear offset keeper
+        eventsCVOffcetKeeper = [:]
+        sportsTV.refreshControl?.endRefreshing()
+        // call reload data to refresh CV scroll positions
+        sportsTV.reloadData()
     }
 }
 
@@ -137,5 +166,17 @@ extension SportsLandingVC: UITableViewDelegate {
 extension SportsLandingVC: SportsTableViewHeaderDelegate {
     func didChangeExpandState(sport: Domain.Sport, isExpand: Bool) {
         viewModel.onTriggeredEvent(event: .collapseSport(sport: sport, isExpand: isExpand))
+    }
+}
+
+// MARK: - Sport Cell Delegate
+extension SportsLandingVC: SportsTableViewCellDelegate {
+    func didEventsCVOffsetChange(sportId: String, contentOffcet: CGPoint) {
+        eventsCVOffcetKeeper[sportId] = contentOffcet
+        print("ContntOffset Debug: .... didEventsCVOffsetChange called with offset \(contentOffcet) and sportId \(sportId)")
+    }
+    
+    func getCVOffset(by sportId: String) -> CGPoint? {
+        return eventsCVOffcetKeeper[sportId]
     }
 }
