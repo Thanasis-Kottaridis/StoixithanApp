@@ -71,6 +71,8 @@ class FeedbackMessageView: UIView {
                 color: .White
             ))
         
+        closeIcon.image = UIImage(named: "close-circle")
+        
         switch message.type {
         case .success:
             contentView.backgroundColor = ColorPalette.Green.value
@@ -80,7 +82,6 @@ class FeedbackMessageView: UIView {
             contentView.backgroundColor = ColorPalette.Gray.value
         case .network(let isError):
             contentView.backgroundColor = isError ? ColorPalette.Red.value : ColorPalette.Green.value
-            
             wifiIcon.image = isError ? UIImage(named: "nowifi") :
             UIImage(named: "wifi")
         }
