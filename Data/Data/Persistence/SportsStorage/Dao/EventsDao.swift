@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Domain
 import RealmSwift
 
 protocol EventDao {
@@ -25,9 +26,11 @@ protocol EventDao {
 }
 
 class EventDaoImpl: EventDao {
+    @Injected(\.realmManager)
+    private var realmManager: RealmManager
     
     private var realm : Realm {
-       return RealmManager.shared.provideRealm()
+       return realmManager.provideRealm()
     }
     
     func storeEvent(event: EventEntity) {

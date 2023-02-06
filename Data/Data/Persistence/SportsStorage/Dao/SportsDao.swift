@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Domain
 import RealmSwift
 
 protocol SportDao {
@@ -25,8 +26,11 @@ protocol SportDao {
 
 class SportDaoImpl: SportDao {
     
+    @Injected(\.realmManager)
+    private var realmManager: RealmManager
+    
     private var realm : Realm {
-       return RealmManager.shared.provideRealm()
+       return realmManager.provideRealm()
     }
     
     func storeSport(sport: SportEntity) {

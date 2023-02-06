@@ -8,7 +8,11 @@
 import Foundation
 import RealmSwift
 
-class RealmManager: NSObject {
+protocol RealmManager {
+    func provideRealm() -> Realm
+}
+
+class RealmManagerImpl: NSObject, RealmManager {
     
     // MARK: - Make it singleton
     /**
@@ -16,10 +20,7 @@ class RealmManager: NSObject {
         RealmManager object in Data Module.
         #SOS
         Realm should be visible / imported only within Data Module.
-     */
-    fileprivate override init(){}
-    static let shared = RealmManager()
-    
+     */    
     func provideRealm() -> Realm {
         let realm = try! Realm()
         return realm

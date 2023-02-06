@@ -7,6 +7,9 @@ def unit_test_pods
   # RxTest and RxBlocking make the most sense in the context of unit/integration tests
   pod 'RxBlocking', '6.5.0'
   pod 'RxTest', '6.5.0'
+  
+  # Alamofier mocking library By WeTransfer
+  pod 'Mocker', '~> 2.5.4'
 end
 
 # ====================================
@@ -44,6 +47,13 @@ target 'Data' do
   project './Data/Data.project'
   use_frameworks!
   data_pods
+  
+  target 'DataTests' do
+    inherit! :search_paths
+    # Pods for testing
+    data_pods
+    unit_test_pods
+  end
 end
 
 # ====================================

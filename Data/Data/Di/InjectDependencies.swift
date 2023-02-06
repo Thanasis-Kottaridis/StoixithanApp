@@ -16,6 +16,10 @@ private struct NetworkProviderKey: InjectionKey {
     static var currentValue: NetworkProvider = NetworkProviderImpl()
 }
 
+private struct RealmManagerkProviderKey: InjectionKey {
+    static var currentValue: RealmManager = RealmManagerImpl()
+}
+
 private struct SportDaoProvider: InjectionKey {
     static var currentValue: SportDao = SportDaoImpl()
 }
@@ -36,6 +40,11 @@ extension InjectedValues {
         set { Self[NetworkProviderKey.self] = newValue }
     }
 
+    var realmManager: RealmManager {
+        get { Self[RealmManagerkProviderKey.self]}
+        set { Self[RealmManagerkProviderKey.self] = newValue }
+    }
+    
     var sportDao: SportDao {
         get { Self[SportDaoProvider.self] }
         set { Self[SportDaoProvider.self] = newValue }

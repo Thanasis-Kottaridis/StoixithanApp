@@ -8,6 +8,30 @@
 import XCTest
 import RealmSwift
 import Alamofire
+@testable import Data
+import Mocker
+
+//MARK: - Mock Realm Manager
+class MockRealmManager: RealmManager {
+    func provideRealm() -> RealmSwift.Realm {
+        /**
+         Use in-memory Realm indentified by the name of current test
+         This ensures that each test can't accidentally access or modify the data from other tests or the application itself, and also does not need any clean up after tests.
+         */
+        Realm.Configuration.defaultConfiguration.inMemoryIdentifier = "SportsRepositoryTest"
+        return try! Realm()
+    }
+}
+
+// MARK: - Mock NetworiProvider
+class MockNetworkProvider: NetworkProvider {
+    lazy var manager: Alamofire.Session = {
+        let configuration = URLSessionConfiguration.af.default
+        configuration.protocolClasses = [MockingURLProtocol.self]
+        return Alamofire.Session(configuration: configuration)
+    }()
+    
+}
 
 /**
  # Integration Test
