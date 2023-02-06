@@ -43,6 +43,7 @@ class EventCollectionViewCell: UICollectionViewCell {
         
         setUpParticipants(event: event)
         setUpParticipants(event: event)
+        setUpIsFavorite(event: event)
         setUpCountDownView(event: event)
         setUpCountDownTimer(event: event)
     }
