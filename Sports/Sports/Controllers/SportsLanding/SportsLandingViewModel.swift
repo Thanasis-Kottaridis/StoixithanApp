@@ -34,7 +34,7 @@ class SportsLandingViewModel: BaseViewModel {
     
     init(actionHandler: BaseActionHandler) {
         self.actionHandler = actionHandler
-        state = BehaviorRelay(value: SportsLandingState())
+        state = BehaviorRelay(value: SportsLandingState(isLoading: true))
         commonInit()
     }
     
@@ -59,17 +59,17 @@ class SportsLandingViewModel: BaseViewModel {
             guard let self = self
             else { return }
             
-            self.state.accept(self.state.value.copy(isLoading: false))
-            
             switch result {
             case .Success(let response):
                 self.state.accept(
                     self.state.value.copy(
+                        isLoading: false,
                         spotrsList: response, // update sports list.
                         collapsedSports: [:] // reset collapsed cells
                     )
                 )
             case .Failure(let error):
+                self.state.accept(self.state.value.copy(isLoading: false))
                 self.handleErrors(error: error)
             }
         }

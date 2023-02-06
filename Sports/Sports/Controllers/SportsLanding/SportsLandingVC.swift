@@ -177,7 +177,6 @@ extension SportsLandingVC: SportsTableViewHeaderDelegate {
 extension SportsLandingVC: SportsTableViewCellDelegate {
     func didEventsCVOffsetChange(sportId: String, contentOffcet: CGPoint) {
         eventsCVOffcetKeeper[sportId] = contentOffcet
-        print("ContntOffset Debug: .... didEventsCVOffsetChange called with offset \(contentOffcet) and sportId \(sportId)")
     }
     
     func getCVOffset(by sportId: String) -> CGPoint? {

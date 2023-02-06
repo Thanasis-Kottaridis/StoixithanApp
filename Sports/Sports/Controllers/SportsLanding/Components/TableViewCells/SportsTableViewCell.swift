@@ -39,7 +39,6 @@ class SportsTableViewCell: UITableViewCell {
         super.prepareForReuse()
         sportId = nil
         eventsCollectionView.contentOffset = CGPoint(x: 0, y: 0)
-        print("ContntOffset Debug: .... prepareForReuse called with offset \(eventsCollectionView.contentOffset)")
         
         // invalidate events countDown
         invalidateEventsCountDown()
@@ -51,8 +50,6 @@ class SportsTableViewCell: UITableViewCell {
     ) {
         self.callback = callback
         self.sportId = sport.id
-        
-        print("ContntOffset Debug: .... set up view called with \(sportId) and delegate \(delegate)")
         // fix collection view offset.
         fixCollectionViewOffset()
     
@@ -88,13 +85,12 @@ class SportsTableViewCell: UITableViewCell {
         // if previous offset for collection view provided
         if let sportId = sportId,
            let cvOffset = delegate?.getCVOffset(by: sportId) {
-            print("ContntOffset Debug: .... fixCollectionViewOffset called with \(sportId) and offset \(cvOffset)")
             eventsCollectionView.contentOffset = cvOffset
         }
     }
     
     func invalidateEventsCountDown() {
-        eventsCollectionView.visibleCells.forEach {            
+        eventsCollectionView.visibleCells.forEach {
             ($0 as? EventCollectionViewCell)?.invalidateCountDownTimer()
         }
     }
