@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Network
 import Domain
 import RxSwift
 import RxCocoa
@@ -91,7 +92,44 @@ public protocol BaseViewModel: ReactiveCompatible, BaseErrorHandler {
 extension BaseViewModel {
     
     public func commonInit() {
+        setUpNetworkMonitor()
         setUpLoadingObserver()
+        setUpConnectivityObserver()
+    }
+    
+    private func setUpNetworkMonitor() {
+        
+        let monitor: NWPathMonitor = NWPathMonitor()
+            
+        monitor.pathUpdateHandler = { [weak self] path in
+            
+            guard let self = self else {
+                return
+            }
+            
+            if path.status == .satisfied {
+                print("Connectivite Observer...... \(String(describing: Self.self)) 📶 📶 📶 We're connected!")
+        
+            } else {
+                print("Connectivite Observer...... \(String(describing: Self.self)) 📶 📶 📶 No connection.")
+            }
+
+            self.state.accept(self.state.value.baseCopy(
+                isLoading: false,
+                isOnline: path.status == .satisfied
+            ))
+            
+            print(path.isExpensive)
+        }
+        
+        print("Connectivite Observer...... \(String(describing: Self.self)) 📶 📶 📶 set up queue.")
+       
+
+        
+        let queue = DispatchQueue(
+            label: "Monitor+\(String(describing: Self.self))"
+        )
+        monitor.start(queue: queue)
     }
     
     private func setUpLoadingObserver() {
@@ -112,7 +150,8 @@ extension BaseViewModel {
         Observable.zip(stateObserver, stateObserver.skip(1))
             .map { (oldState, newState) in
                 return (newState.isOnline, oldState.isOnline)
-            }.subscribe { (newIsOnline, oldIsOnline) in
+            }
+            .subscribe { (newIsOnline, oldIsOnline) in
                 if newIsOnline != oldIsOnline, !oldIsOnline {
                     self.actionHandler?.handleAction(action: PresentFeedbackAction(
                         feedbackMessage: FeedbackMessage.getNetworkFeedbackMessage(isOnline: true)

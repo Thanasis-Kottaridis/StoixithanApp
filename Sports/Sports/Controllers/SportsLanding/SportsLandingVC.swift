@@ -41,6 +41,10 @@ class SportsLandingVC: BaseVC {
         fatalError("init(coder:) has not been implemented")
     }
     
+    deinit {
+        print("Debug.... SportsLanding Deinitialized")
+    }
+    
     override func setupView() {
         super.setupView()
         setUpHeader()

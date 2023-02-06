@@ -24,6 +24,7 @@ class EventCollectionViewCell: UICollectionViewCell {
     static let kCONTENT_XIB_NAME = "EventCollectionViewCell"
     private var event: Event?
     private var callback: ChangeFavoriteStateCallback?
+    private var countDownTimer: Timer?
 
     override func prepareForReuse() {
         super.prepareForReuse()
@@ -31,17 +32,30 @@ class EventCollectionViewCell: UICollectionViewCell {
         participant2Lbl.text = ""
         countDownLbl.text = ""
         isFavoriteImg.image = UIImage(named: "favorite-outline")
+        
+        // invalidate and reset timer.
     }
     
     func setUpCell(event: Event, callback: ChangeFavoriteStateCallback?) {
         self.event = event
         self.callback = callback
+       
+        
+        setUpParticipants(event: event)
+        setUpParticipants(event: event)
+        setUpCountDownView(event: event)
+        setUpCountDownTimer(event: event)
+    }
+    
+    private func setUpParticipants(event: Event) {
         // set up participant lbl
         participant1Lbl.attributedText = event.eventParticipants[safe: 0]?
             .with(.style_16_20(weight: .REGULAR, color: .DarkGray))
         participant2Lbl.attributedText = event.eventParticipants[safe: 1]?
             .with(.style_16_20(weight: .REGULAR, color: .DarkGray))
-        
+    }
+    
+    private func setUpIsFavorite(event: Event) {
         // set up isFavorite Icon
         isFavoriteImg.image = event.isFavoriteUIImage
         isFavoriteImg.addTapGestureRecognizer { [weak self] in
@@ -51,8 +65,6 @@ class EventCollectionViewCell: UICollectionViewCell {
             else { return }
             self.callback?(id, !event.isFavorite)
         }
-        
-        setUpCountDownView(event: event)
     }
     
     private func setUpCountDownView(event: Event) {
@@ -61,7 +73,52 @@ class EventCollectionViewCell: UICollectionViewCell {
         countDownContainer.layer.borderWidth = CGFloat(1.5).adaptedCGFloat()
         countDownContainer.clipsToBounds = true
         
+        countDownLbl.adjustsFontSizeToFitWidth = true
         countDownLbl.attributedText = event.getCountDown.with(.style_16_20(weight: .REGULAR, color: .DarkGray))
+    }
+    
+    private func setUpCountDownTimer(event: Event) {
+        guard event.startCountingNeeded
+        else { return }
+        
+        // fire up a new timer
+        countDownTimer = Timer.scheduledTimer(
+            timeInterval: 1.0,
+            target: self,
+            selector: #selector(countDownTimerSelector),
+            userInfo: nil,
+            repeats: true
+        )
+    }
+
+    @objc private func countDownTimerSelector() {
+        guard let event = event,
+              event.startCountingNeeded
+        else {
+            invalidateCountDownTimer()
+            return
+        }
+        
+        print("CountDown Timer Debug....timer fiered for event: \(event.id ?? "")")
+        
+        countDownLbl.attributedText = event.getCountDown
+            .with(.style_16_20(weight: .REGULAR, color: .DarkGray))
+    }
+    
+    // not private... need to be called from table view
+    // to avoid memory leaks.
+    func invalidateCountDownTimer() {
+        guard countDownTimer?.isValid == true
+        else { return }
+        
+        print("CountDown Timer Debug.... invalidate timer for event: \(event?.id ?? "")")
+
+        countDownTimer?.invalidate()
+        countDownTimer = nil
+    }
+    
+    deinit {
+        invalidateCountDownTimer()
     }
 }
 
@@ -82,5 +139,13 @@ fileprivate extension Event {
         
         let date = Date(timeIntervalSince1970: TimeInterval(timestamp))
         return date.geCountDownOffset(from: Date(), absValue: true)
+    }
+    
+    /// 24Hours * 60minutes * 60 seconds.
+    var startCountingNeeded: Bool {
+        guard let timestamp = timestamp
+        else { return false }
+        let currentUnix = Int(Date().timeIntervalSince1970)
+        return currentUnix...currentUnix+(24*60*60) ~= timestamp
     }
 }

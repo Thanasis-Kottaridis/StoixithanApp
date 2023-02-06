@@ -25,7 +25,7 @@ public struct FeedbackMessage {
     
     public static func getNetworkFeedbackMessage(isOnline: Bool) -> Self {
         return FeedbackMessage(
-            message: isOnline ? "Strings.gov_wallet__network_restored" : "Strings.gov_wallet__network_error",
+            message: isOnline ? "H σύνδεση έχει επανέλθει." : "Εκτός σύνδεσης! Η εφαρμογή δεν έχει πρόσβαση στο διαδίκτυο.",
             type: .network(isError: !isOnline)
         )
     }

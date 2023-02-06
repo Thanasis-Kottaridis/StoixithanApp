@@ -40,6 +40,9 @@ class SportsTableViewCell: UITableViewCell {
         sportId = nil
         eventsCollectionView.contentOffset = CGPoint(x: 0, y: 0)
         print("ContntOffset Debug: .... prepareForReuse called with offset \(eventsCollectionView.contentOffset)")
+        
+        // invalidate events countDown
+        invalidateEventsCountDown()
     }
     
     func setUpView(
@@ -87,6 +90,12 @@ class SportsTableViewCell: UITableViewCell {
            let cvOffset = delegate?.getCVOffset(by: sportId) {
             print("ContntOffset Debug: .... fixCollectionViewOffset called with \(sportId) and offset \(cvOffset)")
             eventsCollectionView.contentOffset = cvOffset
+        }
+    }
+    
+    func invalidateEventsCountDown() {
+        eventsCollectionView.visibleCells.forEach {            
+            ($0 as? EventCollectionViewCell)?.invalidateCountDownTimer()
         }
     }
 }

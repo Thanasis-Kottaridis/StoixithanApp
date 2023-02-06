@@ -40,7 +40,7 @@ class TestViewModel: BaseViewModel {
 //            actionHandler?.handleAction(action: GoToTest())
             testEndpoint()
         case .getEvents:
-            testEvents()
+            actionHandler?.handleAction(action: GoToSports())
         case .updateFavorite:
             updateFavorite()
         }
