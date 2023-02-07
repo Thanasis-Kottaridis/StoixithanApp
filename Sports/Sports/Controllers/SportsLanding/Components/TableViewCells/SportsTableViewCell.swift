@@ -97,7 +97,7 @@ class SportsTableViewCell: UITableViewCell {
 }
 
 // MARK: - CollectionView Delegate
-extension SportsTableViewCell: UICollectionViewDelegate {
+extension SportsTableViewCell: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         guard let id = sportId
         else { return }
@@ -106,6 +106,12 @@ extension SportsTableViewCell: UICollectionViewDelegate {
             sportId: id,
             contentOffcet: eventsCollectionView.contentOffset
         )
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        let dimention = CGFloat(150).adaptedCGFloat()
+        return CGSize(width: dimention, height: dimention)
     }
 }
 
