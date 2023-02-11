@@ -22,6 +22,11 @@
 		AE224021298E8967006DA84C /* SportsLandingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE22401E298E8967006DA84C /* SportsLandingState.swift */; };
 		AE224048298EAF86006DA84C /* EventCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE224046298EAF86006DA84C /* EventCollectionViewCell.swift */; };
 		AE224049298EAF87006DA84C /* EventCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE224047298EAF86006DA84C /* EventCollectionViewCell.xib */; };
+		AE57B66929984DB2002FAF9A /* EventDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE57B66729984DB2002FAF9A /* EventDetailsVC.swift */; };
+		AE57B66A29984DB2002FAF9A /* EventDetailsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE57B66829984DB2002FAF9A /* EventDetailsVC.xib */; };
+		AE57B66F29984DCF002FAF9A /* EventDetailsEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE57B66C29984DCF002FAF9A /* EventDetailsEvents.swift */; };
+		AE57B67029984DCF002FAF9A /* EventDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE57B66D29984DCF002FAF9A /* EventDetailsViewModel.swift */; };
+		AE57B67129984DCF002FAF9A /* EventDetailsState.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE57B66E29984DCF002FAF9A /* EventDetailsState.swift */; };
 		AE963C2A298ECCC20030AC05 /* SportsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE963C28298ECCC20030AC05 /* SportsTableViewCell.swift */; };
 		AE963C2B298ECCC20030AC05 /* SportsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE963C29298ECCC20030AC05 /* SportsTableViewCell.xib */; };
 		AE963C4A298FB19C0030AC05 /* SportsTableViewHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE963C49298FB19C0030AC05 /* SportsTableViewHeader.xib */; };
@@ -72,6 +77,11 @@
 		AE224023298E8CA8006DA84C /* Pods_Presentation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_Presentation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE224046298EAF86006DA84C /* EventCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCollectionViewCell.swift; sourceTree = "<group>"; };
 		AE224047298EAF86006DA84C /* EventCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventCollectionViewCell.xib; sourceTree = "<group>"; };
+		AE57B66729984DB2002FAF9A /* EventDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailsVC.swift; sourceTree = "<group>"; };
+		AE57B66829984DB2002FAF9A /* EventDetailsVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventDetailsVC.xib; sourceTree = "<group>"; };
+		AE57B66C29984DCF002FAF9A /* EventDetailsEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailsEvents.swift; sourceTree = "<group>"; };
+		AE57B66D29984DCF002FAF9A /* EventDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailsViewModel.swift; sourceTree = "<group>"; };
+		AE57B66E29984DCF002FAF9A /* EventDetailsState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailsState.swift; sourceTree = "<group>"; };
 		AE963C28298ECCC20030AC05 /* SportsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsTableViewCell.swift; sourceTree = "<group>"; };
 		AE963C29298ECCC20030AC05 /* SportsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SportsTableViewCell.xib; sourceTree = "<group>"; };
 		AE963C49298FB19C0030AC05 /* SportsTableViewHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SportsTableViewHeader.xib; sourceTree = "<group>"; };
@@ -183,6 +193,7 @@
 		AE224014298E86F9006DA84C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				AE57B66429984D83002FAF9A /* EventDetails */,
 				AE224015298E8708006DA84C /* SportsLanding */,
 			);
 			path = Controllers;
@@ -216,6 +227,26 @@
 				AE963C3C298FA92C0030AC05 /* TableViewCells */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		AE57B66429984D83002FAF9A /* EventDetails */ = {
+			isa = PBXGroup;
+			children = (
+				AE57B66B29984DBB002FAF9A /* Interactors */,
+				AE57B66729984DB2002FAF9A /* EventDetailsVC.swift */,
+				AE57B66829984DB2002FAF9A /* EventDetailsVC.xib */,
+				AE57B66D29984DCF002FAF9A /* EventDetailsViewModel.swift */,
+			);
+			path = EventDetails;
+			sourceTree = "<group>";
+		};
+		AE57B66B29984DBB002FAF9A /* Interactors */ = {
+			isa = PBXGroup;
+			children = (
+				AE57B66C29984DCF002FAF9A /* EventDetailsEvents.swift */,
+				AE57B66E29984DCF002FAF9A /* EventDetailsState.swift */,
+			);
+			path = Interactors;
 			sourceTree = "<group>";
 		};
 		AE963C3C298FA92C0030AC05 /* TableViewCells */ = {
@@ -377,6 +408,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE22401B298E8833006DA84C /* SportsLandingVC.xib in Resources */,
+				AE57B66A29984DB2002FAF9A /* EventDetailsVC.xib in Resources */,
 				AE963C4A298FB19C0030AC05 /* SportsTableViewHeader.xib in Resources */,
 				AE963C2B298ECCC20030AC05 /* SportsTableViewCell.xib in Resources */,
 				AE224049298EAF87006DA84C /* EventCollectionViewCell.xib in Resources */,
@@ -463,10 +495,14 @@
 			files = (
 				AE224020298E8967006DA84C /* SportsLandingViewModel.swift in Sources */,
 				AE224048298EAF86006DA84C /* EventCollectionViewCell.swift in Sources */,
+				AE57B67029984DCF002FAF9A /* EventDetailsViewModel.swift in Sources */,
 				AE963C2A298ECCC20030AC05 /* SportsTableViewCell.swift in Sources */,
+				AE57B67129984DCF002FAF9A /* EventDetailsState.swift in Sources */,
 				AE223FDF298E8663006DA84C /* Sports.docc in Sources */,
 				AEB3544E298FBD9C00252427 /* SportsTableViewHeader.swift in Sources */,
+				AE57B66F29984DCF002FAF9A /* EventDetailsEvents.swift in Sources */,
 				AE22401F298E8967006DA84C /* SportsLandingEvents.swift in Sources */,
+				AE57B66929984DB2002FAF9A /* EventDetailsVC.swift in Sources */,
 				AE22401A298E8833006DA84C /* SportsLandingVC.swift in Sources */,
 				AE224021298E8967006DA84C /* SportsLandingState.swift in Sources */,
 				AE224017298E8720006DA84C /* SportsCoordinator.swift in Sources */,

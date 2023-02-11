@@ -34,13 +34,13 @@ class EventCollectionViewCell: UICollectionViewCell {
         isFavoriteImg.image = UIImage(named: "favorite-outline")
         
         // invalidate and reset timer.
+        invalidateCountDownTimer()
     }
     
     func setUpCell(event: Event, callback: ChangeFavoriteStateCallback?) {
         self.event = event
         self.callback = callback
        
-        
         setUpParticipants(event: event)
         setUpParticipants(event: event)
         setUpIsFavorite(event: event)
@@ -81,6 +81,9 @@ class EventCollectionViewCell: UICollectionViewCell {
     private func setUpCountDownTimer(event: Event) {
         guard event.startCountingNeeded
         else { return }
+        
+        // invalidate counter
+        invalidateCountDownTimer()
         
         // fire up a new timer
         countDownTimer = Timer.scheduledTimer(

@@ -9,6 +9,7 @@ import UIKit
 import Presentation
 
 struct GoToSportsLanding: Action {}
+struct GoToEventDetails: Action { let eventId: String }
 
 public class SportsCoordinator: Coordinator {
     public weak var parentCoordinator: Presentation.Coordinator?
@@ -44,6 +45,10 @@ extension SportsCoordinator {
         case _ as GoToSportsLanding:
             let viewModel = SportsLandingViewModel(actionHandler: self)
             let vc = SportsLandingVC(viewModel: viewModel)
+            navigate(to: vc, with: .push)
+        case let action as GoToEventDetails:
+            let viewModel = EventDetailsViewModel(eventId: action.eventId, actionHandler: self)
+            let vc = EventDetailsVC(viewModel: viewModel)
             navigate(to: vc, with: .push)
         default:
             // Use super implementation of BaseActionHandler

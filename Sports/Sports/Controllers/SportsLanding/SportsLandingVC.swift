@@ -175,11 +175,16 @@ extension SportsLandingVC: SportsTableViewHeaderDelegate {
 
 // MARK: - Sport Cell Delegate
 extension SportsLandingVC: SportsTableViewCellDelegate {
+    
     func didEventsCVOffsetChange(sportId: String, contentOffcet: CGPoint) {
         eventsCVOffcetKeeper[sportId] = contentOffcet
     }
     
     func getCVOffset(by sportId: String) -> CGPoint? {
         return eventsCVOffcetKeeper[sportId]
+    }
+    
+    func didSelectEvent(eventId: String) {
+        viewModel.onTriggeredEvent(event: .goToEventDetails(eventId: eventId))
     }
 }

@@ -22,7 +22,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="150"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="150" id="KSx-Ed-9kL"/>
+                            <constraint firstAttribute="height" constant="150" id="KSx-Ed-9kL" customClass="AdaptedConstraint" customModule="Presentation"/>
                         </constraints>
                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="5hY-oZ-6Y0">
                             <size key="itemSize" width="0.0" height="0.0"/>

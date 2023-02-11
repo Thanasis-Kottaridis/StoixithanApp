@@ -49,6 +49,8 @@ class SportsLandingViewModel: BaseViewModel {
             selectFavoriteEvent(eventId: eventId, isFavorite: isFavorite)
         case .collapseSport(let sport, let isExpand):
             changeExpandCollapseState(sport: sport, isExpand: isExpand)
+        case .goToEventDetails(let eventId):
+            actionHandler?.handleAction(action: GoToEventDetails(eventId: eventId))
         }
     }
     

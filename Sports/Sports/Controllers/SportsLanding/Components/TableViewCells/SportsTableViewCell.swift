@@ -15,13 +15,14 @@ import RxDataSources
 protocol SportsTableViewCellDelegate: AnyObject {
     func didEventsCVOffsetChange(sportId: String, contentOffcet: CGPoint)
     func getCVOffset(by sportId: String) -> CGPoint?
+    func didSelectEvent(eventId: String)
 }
 
 class SportsTableViewCell: UITableViewCell {
     
     // MARK: - Vars
     static let kCONTENT_XIB_NAME = "SportsTableViewCell"
-    private var sportId : String?
+    private var sport : Sport?
     private var sportObserver = PublishSubject<Sport>()
     // TODO: - Remove this callback since we have delegate.
     private var callback: ChangeFavoriteStateCallback?
@@ -37,7 +38,7 @@ class SportsTableViewCell: UITableViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        sportId = nil
+        sport = nil
         eventsCollectionView.contentOffset = CGPoint(x: 0, y: 0)
         
         // invalidate events countDown
@@ -49,7 +50,7 @@ class SportsTableViewCell: UITableViewCell {
         callback: @escaping ChangeFavoriteStateCallback
     ) {
         self.callback = callback
-        self.sportId = sport.id
+        self.sport = sport
         // fix collection view offset.
         fixCollectionViewOffset()
     
@@ -83,7 +84,7 @@ class SportsTableViewCell: UITableViewCell {
     private func fixCollectionViewOffset() {
         // updatem eventsCollectionView contentOffset
         // if previous offset for collection view provided
-        if let sportId = sportId,
+        if let sportId = sport?.id,
            let cvOffset = delegate?.getCVOffset(by: sportId) {
             eventsCollectionView.contentOffset = cvOffset
         }
@@ -99,7 +100,7 @@ class SportsTableViewCell: UITableViewCell {
 // MARK: - CollectionView Delegate
 extension SportsTableViewCell: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        guard let id = sportId
+        guard let id = sport?.id
         else { return }
         
         delegate?.didEventsCVOffsetChange(
@@ -112,6 +113,13 @@ extension SportsTableViewCell: UICollectionViewDelegate, UICollectionViewDelegat
         
         let dimention = CGFloat(150).adaptedCGFloat()
         return CGSize(width: dimention, height: dimention)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let eventId = sport?.events?[safe: indexPath.row]?.id
+        else { return }
+        
+        delegate?.didSelectEvent(eventId: eventId)
     }
 }
 
