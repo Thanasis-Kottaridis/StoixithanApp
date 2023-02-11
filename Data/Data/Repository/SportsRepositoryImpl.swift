@@ -24,9 +24,9 @@ public class SportsRepositoryImpl: SportsRepository {
         completion: @escaping (Domain.Result<[Domain.Sport]?, Domain.BaseException>) -> Void
     ) {
         /*
-            If no force update requires
-            and sports exist in local storage.
-            fetch local spors and fire completion.
+         If no force update requires
+         and sports exist in local storage.
+         fetch local spors and fire completion.
          */
         if !forceUpdate {
             let sports = SportEntityMapper().mapDomainLists(modelList: sportDao.getAllSports())
@@ -38,7 +38,7 @@ public class SportsRepositoryImpl: SportsRepository {
         }
         
         /*
-            Else fetch remote spors and fire completion.
+         Else fetch remote spors and fire completion.
          */
         getRemoteSpotsWithEvents(completion: completion)
     }
